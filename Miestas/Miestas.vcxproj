@@ -177,6 +177,7 @@
     <ClInclude Include="include\Renderer\assimp\vector2.h" />
     <ClInclude Include="include\Renderer\assimp\vector3.h" />
     <ClInclude Include="include\Renderer\assimp\version.h" />
+    <ClInclude Include="include\Renderer\AttributeLayout.h" />
     <ClInclude Include="include\Renderer\glad\glad.h" />
     <ClInclude Include="include\Renderer\GLFW\glfw3.h" />
     <ClInclude Include="include\Renderer\GLFW\glfw3native.h" />
@@ -427,6 +428,7 @@
     <ClInclude Include="include\imgui\imstb_rectpack.h" />
     <ClInclude Include="include\imgui\imstb_textedit.h" />
     <ClInclude Include="include\imgui\imstb_truetype.h" />
+    <ClInclude Include="include\Renderer\IndexBuffer.h" />
     <ClInclude Include="include\Renderer\KHR\khrplatform.h" />
     <ClInclude Include="include\Logger\spdlog\async.h" />
     <ClInclude Include="include\Logger\spdlog\async_logger-inl.h" />
@@ -505,6 +507,8 @@
     <ClInclude Include="include\Logger\spdlog\version.h" />
     <ClInclude Include="include\Renderer\Shader.h" />
     <ClInclude Include="include\Renderer\stb_image\stb_image.h" />
+    <ClInclude Include="include\Renderer\VertexArray.h" />
+    <ClInclude Include="include\Renderer\VertexBuffer.h" />
     <ClInclude Include="include\Renderer\Window.h" />
     <ClInclude Include="include\Utils\FastNoise.h" />
   </ItemGroup>
@@ -656,8 +660,12 @@
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
     <ClCompile Include="include\imgui\imgui_draw.cpp" />
     <ClCompile Include="include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="include\Renderer\AttributeLayout.cpp" />
+    <ClCompile Include="include\Renderer\IndexBuffer.cpp" />
     <ClCompile Include="include\Renderer\Shader.cpp" />
     <ClCompile Include="include\Renderer\stb_image\stb_image.cpp" />
+    <ClCompile Include="include\Renderer\VertexArray.cpp" />
+    <ClCompile Include="include\Renderer\VertexBuffer.cpp" />
     <ClCompile Include="include\Renderer\Window.cpp" />
     <ClCompile Include="include\Utils\FastNoise.cpp" />
     <ClCompile Include="src\Application.cpp" />
