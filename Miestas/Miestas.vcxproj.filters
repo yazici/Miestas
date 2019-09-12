@@ -1562,6 +1562,8 @@
     <None Include="include\Renderer\assimp\vector3.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="shaders\TriangleTest.vs" />
+    <None Include="shaders\TriangleTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\glm\detail\glm.cpp">

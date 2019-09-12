@@ -317,6 +317,8 @@ namespace Miestas
 			glDeleteShader(fs);
 			if (geoSource)
 				glDeleteShader(gs);
+
+			MIESTAS_LOG_INFO("Successfully compiled shader program: {0}", m_shaderName)
 		}
 
 		void Shader::getErrors(unsigned int s_id)

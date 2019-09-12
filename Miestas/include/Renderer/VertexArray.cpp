@@ -59,6 +59,18 @@ namespace Miestas
 			MIESTAS_LOG_INFO("Successfully binded the index buffer to vertex array.")
 		}
 
+		void VertexArray::bind() const
+		{
+			glBindVertexArray(m_arrayId);
+		}
+
+		void VertexArray::unbind() const
+		{
+			glBindVertexArray(0);
+		}
+
+
+
 		void VertexArray::render() const
 		{
 			m_indexBuffer->render();

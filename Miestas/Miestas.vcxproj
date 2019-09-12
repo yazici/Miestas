@@ -652,6 +652,8 @@
     <None Include="include\glm\gtx\vector_angle.inl" />
     <None Include="include\glm\gtx\vector_query.inl" />
     <None Include="include\glm\gtx\wrap.inl" />
+    <None Include="shaders\TriangleTest.fs" />
+    <None Include="shaders\TriangleTest.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Renderer\Renderer\src\glad.c" />

@@ -29,6 +29,9 @@ namespace Miestas
 
 			void bindIndexBuffer(std::unique_ptr<IndexBuffer> ib);
 
+			void bind() const;
+
+			void unbind() const;
 
 			void render() const;
 

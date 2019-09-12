@@ -13,6 +13,10 @@ namespace Miestas
 			GLenum m_Type;
 			bool m_isNormalized;
 
+			AttributeLayout(unsigned int ms, GLenum mt, bool isn) :
+				m_Size(ms), m_Type(mt), m_isNormalized(isn) {}
+
+
 			static unsigned int getTypeSize(GLenum type);
 
 		};
