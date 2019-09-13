@@ -4,7 +4,7 @@
 
 namespace Miestas
 {
-	namespace Renderer
+	namespace Core
 	{
 		Window::~Window()
 		{

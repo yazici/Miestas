@@ -36,8 +36,8 @@ namespace Miestas
 			unsigned int getLayoutStride() const;
 
 			const std::vector<AttributeLayout>& getAttributeLayout() const;
-			// void render() const; Do we really need this?
-
+			
+			//void render() const; //Do we really need this?
 		};
 	}
 }

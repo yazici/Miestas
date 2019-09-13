@@ -9,7 +9,7 @@
 
 namespace Miestas
 {
-	namespace Renderer
+	namespace Core
 	{
 		class Window
 		{

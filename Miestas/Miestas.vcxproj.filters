@@ -1125,9 +1125,6 @@
     <ClInclude Include="include\Utils\FastNoise.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Renderer\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Renderer\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1141,6 +1138,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Renderer\IndexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1584,16 +1587,10 @@
     <ClCompile Include="include\Renderer\stb_image\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Renderer\Renderer\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Utils\FastNoise.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="include\Renderer\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Renderer\Shader.cpp">
@@ -1609,6 +1606,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Renderer\IndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Core\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="miestas\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Core\Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

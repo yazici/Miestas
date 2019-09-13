@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Core\Timer.h" />
     <ClInclude Include="include\Logger\Logger.h" />
     <ClInclude Include="include\Renderer\assimp\ai_assert.h" />
     <ClInclude Include="include\Renderer\assimp\anim.h" />
@@ -509,7 +510,7 @@
     <ClInclude Include="include\Renderer\stb_image\stb_image.h" />
     <ClInclude Include="include\Renderer\VertexArray.h" />
     <ClInclude Include="include\Renderer\VertexBuffer.h" />
-    <ClInclude Include="include\Renderer\Window.h" />
+    <ClInclude Include="include\Core\Window.h" />
     <ClInclude Include="include\Utils\FastNoise.h" />
   </ItemGroup>
   <ItemGroup>
@@ -657,6 +658,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Renderer\Renderer\src\glad.c" />
+    <ClCompile Include="include\Core\Timer.cpp" />
     <ClCompile Include="include\glm\detail\glm.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
@@ -668,9 +670,9 @@
     <ClCompile Include="include\Renderer\stb_image\stb_image.cpp" />
     <ClCompile Include="include\Renderer\VertexArray.cpp" />
     <ClCompile Include="include\Renderer\VertexBuffer.cpp" />
-    <ClCompile Include="include\Renderer\Window.cpp" />
+    <ClCompile Include="include\Core\Window.cpp" />
     <ClCompile Include="include\Utils\FastNoise.cpp" />
-    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="miestas\Application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
