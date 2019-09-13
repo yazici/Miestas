@@ -506,6 +506,7 @@
     <ClInclude Include="include\Logger\spdlog\spdlog.h" />
     <ClInclude Include="include\Logger\spdlog\tweakme.h" />
     <ClInclude Include="include\Logger\spdlog\version.h" />
+    <ClInclude Include="include\Renderer\OrthoCamera.h" />
     <ClInclude Include="include\Renderer\Shader.h" />
     <ClInclude Include="include\Renderer\stb_image\stb_image.h" />
     <ClInclude Include="include\Renderer\VertexArray.h" />
@@ -666,6 +667,7 @@
     <ClCompile Include="include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="include\Renderer\AttributeLayout.cpp" />
     <ClCompile Include="include\Renderer\IndexBuffer.cpp" />
+    <ClCompile Include="include\Renderer\OrthoCamera.cpp" />
     <ClCompile Include="include\Renderer\Shader.cpp" />
     <ClCompile Include="include\Renderer\stb_image\stb_image.cpp" />
     <ClCompile Include="include\Renderer\VertexArray.cpp" />

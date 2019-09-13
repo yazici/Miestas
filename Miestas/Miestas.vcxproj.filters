@@ -1146,6 +1146,9 @@
     <ClInclude Include="include\Core\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Renderer\OrthoCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\glm\detail\func_common.inl">
@@ -1615,6 +1618,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Core\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Renderer\OrthoCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

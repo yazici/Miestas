@@ -19,8 +19,9 @@ namespace Miestas
 
 			auto castedDuration = castedEndTime - castedStartTime;
 
+#ifdef LOG_FRAME_TIME
 			MIESTAS_LOG_INFO("Seconds per frame: {0} milliseconds", castedDuration * 0.001)
-
+#endif
 		}
 	}
 }
