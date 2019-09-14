@@ -10,12 +10,19 @@
 #include<vector>
 #include<memory>
 
-// This file will eventually have an Application that will run the game.
+// This file will eventually have an Application class that will run the game.
 // For now, we're using it to test stuff.
 
+/*
+
+std::unique_ptr<Application> m_Application;
+m_Application->initializeApplication();
+m_Application->run();
+
+*/
 
 int main()
-{	
+{
 	using namespace Miestas;
 	using namespace Miestas::Renderer;
 	using namespace Miestas::Core;
@@ -24,27 +31,15 @@ int main()
 
 	Window window("Debug", 1920, 1080);
 
-	window.initWindow();
-	/*std::vector<float> vbdata = {
-	 0.5f,  0.5f, 0.0f,  // top right
-	 0.5f, -0.5f, 0.0f,  // bottom right
-	-0.5f, -0.5f, 0.0f,  // bottom left
-	-0.5f,  0.5f, 0.0f   // top left 
-	};
-
-	std::vector<unsigned int> idata = {
-		 0, 1, 3,   // first triangle
-	1, 2, 3    // second triangle
-	};*/
+	window.init();
 
 	std::vector<float> vbdata;
-	//vbdata.resize(100);
 
 	fnoise.SetNoiseType(FastNoise::Perlin);
 	fnoise.SetSeed(10443);
 	constexpr float SCALE_FACTOR = 0.1f;
 	constexpr int MAP_SIZE = 1000;
-	
+
 	for (int i = 0; i <= MAP_SIZE; i++)
 	{
 		for (int j = 0; j <= MAP_SIZE; j++)
@@ -57,11 +52,11 @@ int main()
 
 	std::vector<unsigned int> idata;
 	//unsigned int offset = 0;
-	for (int i = 0; i < MAP_SIZE  ;i++)
+	for (int i = 0; i < MAP_SIZE; i++)
 	{
 		for (int j = 0; j < MAP_SIZE; j++)
 		{
-			unsigned int r1 = i * (MAP_SIZE+1);
+			unsigned int r1 = i * (MAP_SIZE + 1);
 			unsigned int r2 = (i + 1) * (MAP_SIZE + 1);
 
 			idata.push_back(r1 + j);

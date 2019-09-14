@@ -31,7 +31,7 @@ namespace Miestas
 			MIESTAS_LOG_INFO("VSync Disabled")
 		}
 
-		void Window::initWindow()
+		void Window::init()
 		{
 			if (!glfwInit())
 			{

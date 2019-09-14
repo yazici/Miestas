@@ -33,7 +33,7 @@ namespace Miestas
 
 			void disableVSync();
 
-			void initWindow();
+			void init();
 
 			void clearWindow(float r, float g, float b, float a = 1.0f);
 
