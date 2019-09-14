@@ -142,6 +142,7 @@
     <ClInclude Include="include\Core\Event\KeyboardEvents.h" />
     <ClInclude Include="include\Core\Event\MouseEvents.h" />
     <ClInclude Include="include\Core\Event\WindowEvents.h" />
+    <ClInclude Include="include\Core\KeyBindings.h" />
     <ClInclude Include="include\Core\Timer.h" />
     <ClInclude Include="include\Logger\Logger.h" />
     <ClInclude Include="include\Renderer\assimp\ai_assert.h" />

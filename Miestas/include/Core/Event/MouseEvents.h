@@ -3,6 +3,8 @@
 
 #include "Event.h"
 
+#include "Logger/Logger.h"
+
 namespace Miestas
 {
 	namespace Core
@@ -14,7 +16,7 @@ namespace Miestas
 
 			float m_newX, m_newY;
 
-			MouseMovedEvent(float newX, float newY): m_newX(newX), m_newY(newY) {}
+			MouseMovedEvent(float newX, float newY): m_newX(newX), m_newY(newY) { MIESTAS_LOG_INFO("Generated a MouseMovedEvent.") }
 
 		};
 
@@ -25,7 +27,7 @@ namespace Miestas
 
 			float m_deltaY;
 
-			MouseScrollEvent(float deltaY) : m_deltaY(deltaY) {}
+			MouseScrollEvent(float deltaY) : m_deltaY(deltaY) { MIESTAS_LOG_INFO("Generated a MouseScrollEvent.") }
 
 		};
 	}
