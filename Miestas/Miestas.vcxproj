@@ -108,7 +108,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;$(SolutionDir)Miestas\include\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LOG_FRAME_TIME;DEBUG_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -125,7 +126,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;$(SolutionDir)Miestas\include\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LOG_FRAME_TIME;DEBUG_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -136,6 +138,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.h" />
+    <ClInclude Include="include\Core\Event\Event.h" />
+    <ClInclude Include="include\Core\Event\KeyboardEvents.h" />
+    <ClInclude Include="include\Core\Event\MouseEvents.h" />
+    <ClInclude Include="include\Core\Event\WindowEvents.h" />
     <ClInclude Include="include\Core\Timer.h" />
     <ClInclude Include="include\Logger\Logger.h" />
     <ClInclude Include="include\Renderer\assimp\ai_assert.h" />
@@ -512,6 +518,7 @@
     <ClInclude Include="include\Renderer\Shader.h" />
     <ClInclude Include="include\Renderer\stb_image\stb_image.h" />
     <ClInclude Include="include\Renderer\Texture.h" />
+    <ClInclude Include="include\Renderer\TextureManager.h" />
     <ClInclude Include="include\Renderer\VertexArray.h" />
     <ClInclude Include="include\Renderer\VertexBuffer.h" />
     <ClInclude Include="include\Core\Window.h" />
@@ -661,7 +668,6 @@
     <None Include="shaders\TriangleTest.vs" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Renderer\Renderer\src\glad.c" />
     <ClCompile Include="include\Core\Timer.cpp" />
     <ClCompile Include="include\glm\detail\glm.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
@@ -675,11 +681,13 @@
     <ClCompile Include="include\Renderer\Shader.cpp" />
     <ClCompile Include="include\Renderer\stb_image\stb_image.cpp" />
     <ClCompile Include="include\Renderer\Texture.cpp" />
+    <ClCompile Include="include\Renderer\TextureManager.cpp" />
     <ClCompile Include="include\Renderer\VertexArray.cpp" />
     <ClCompile Include="include\Renderer\VertexBuffer.cpp" />
     <ClCompile Include="include\Core\Window.cpp" />
     <ClCompile Include="include\Utils\FastNoise.cpp" />
     <ClCompile Include="include\Application.cpp" />
+    <ClCompile Include="miestas\glad.c" />
     <ClCompile Include="miestas\Miestas.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

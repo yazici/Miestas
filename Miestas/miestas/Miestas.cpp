@@ -10,6 +10,9 @@
 #include<vector>
 #include<memory>
 
+#include "Core/Event/Event.h"
+#include "Core/Event/WindowEvents.h"
+
 // This file will eventually have an Application class that will run the game.
 // For now, we're using it to test stuff.
 
@@ -29,8 +32,7 @@ int main()
 
 	FastNoise fnoise;
 
-	Window window("Debug", 1920, 1080);
-
+	Window window;
 	window.init();
 
 	std::vector<float> vbdata;
@@ -38,7 +40,7 @@ int main()
 	fnoise.SetNoiseType(FastNoise::Perlin);
 	fnoise.SetSeed(10443);
 	constexpr float SCALE_FACTOR = 0.1f;
-	constexpr int MAP_SIZE = 1000;
+	constexpr int MAP_SIZE = 10;
 
 	for (int i = 0; i <= MAP_SIZE; i++)
 	{
@@ -84,6 +86,15 @@ int main()
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	Timer timer;
+
+	Event* wrevent = new WindowResizeEvent(800, 600);
+
+	MIESTAS_LOG_INFO("{0}", wrevent->m_eventType == EventType::None ? "None" : "WindowResize")
+
+		auto w = static_cast<WindowResizeEvent*>(wrevent);
+	MIESTAS_LOG_INFO("{0}", w->m_eventType == EventType::None ? "None" : "WindowResize")
+	MIESTAS_LOG_INFO("{0}", w->m_newHeight)
+
 	while (!window.shouldClose())
 	{
 		timer.reset();
@@ -94,4 +105,5 @@ int main()
 		window.updateWindow();
 		timer.stop();
 	}
+
 }

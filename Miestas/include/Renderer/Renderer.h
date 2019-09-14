@@ -3,6 +3,7 @@
 
 #include<vector>
 
+#include "TextureManager.h"
 /*
 The main Renderer class. The class will contain a reference to camera objects, as well as all model data
 
@@ -18,11 +19,13 @@ namespace Miestas
 		{
 		private:
 
+			TextureManager m_textureManager;
+
 		public:
 			
 			void setWireframeMode(bool mode);
 
-			void initializeRenderer();
+			void init();
 
 			void beginScene() const;
 
