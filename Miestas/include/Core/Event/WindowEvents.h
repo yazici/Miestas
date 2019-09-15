@@ -1,5 +1,5 @@
-#ifndef WINDOW_EVENT_H
-#define WINDOE_EVENT_H
+#ifndef WINDOW_EVENTS_H
+#define WINDOW_EVENTS_H
 
 #include "Event.h"
 

@@ -3,15 +3,16 @@
 
 #include<string>
 
-
 #include "GLFW/glfw3.h"
 
+#include "Core/Event/Observable.h"
+#include "Event/EventQueue.h"
 
 namespace Miestas
 {
 	namespace Core
 	{
-		class Window
+		class Window: public Observable
 		{
 		private:
 			std::string m_windowTitle;
@@ -19,6 +20,7 @@ namespace Miestas
 			unsigned int m_Height;
 			bool m_vSyncEnabled;
 			GLFWwindow* m_Window;
+			EventQueue* m_eventQueue;
 
 		public:
 
@@ -40,7 +42,13 @@ namespace Miestas
 			void updateWindow();
 
 			bool shouldClose() const;
-			
+
+			virtual void onEvent(Event* event) override;
+
+			virtual void setEventQueue(EventQueue* eq) override;
+
+			virtual void emitEvent(Event* event) override;
+
 		};
 	}
 }

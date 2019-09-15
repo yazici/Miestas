@@ -13,9 +13,6 @@
 #include "Core/Event/Event.h"
 #include "Core/Event/WindowEvents.h"
 
-// This file will eventually have an Application class that will run the game.
-// For now, we're using it to test stuff.
-
 /*
 
 std::unique_ptr<Application> m_Application;
@@ -47,7 +44,7 @@ int main()
 		for (int j = 0; j <= MAP_SIZE; j++)
 		{
 			vbdata.push_back(static_cast<float>(j * SCALE_FACTOR));
-			vbdata.push_back(fnoise.GetNoise(j, i));
+			vbdata.push_back(static_cast<float>(fnoise.GetNoise(j, i)));
 			vbdata.push_back(static_cast<float>(i * SCALE_FACTOR));
 		}
 	}

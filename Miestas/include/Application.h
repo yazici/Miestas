@@ -7,12 +7,13 @@
 
 namespace Miestas
 {
+	using MiestasRenderer = Miestas::Renderer::Renderer;
 	using namespace Miestas::Renderer;
 	class Application
 	{
 	private:
 		bool m_isRunning = true;
-		std::unique_ptr<Renderer> m_Renderer;
+		std::unique_ptr<MiestasRenderer> m_Renderer;
 
 	public:
 

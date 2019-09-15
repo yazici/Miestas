@@ -1,6 +1,10 @@
 #include "glad/glad.h"
+
 #include "Window.h"
 #include "Logger/Logger.h"
+#include "Core/Event/WindowEvents.h"
+
+#include<functional>
 
 namespace Miestas
 {
@@ -76,6 +80,24 @@ namespace Miestas
 		{
 			return glfwWindowShouldClose(m_Window);
 		}
+
+		void Window::onEvent(Event * event)
+		{
+			// TODO
+		}
+
+		void Window::setEventQueue(EventQueue * eq)
+		{
+			m_eventQueue = eq;
+		}
+
+		void Window::emitEvent(Event * event)
+		{
+			m_eventQueue->addEventToQueue(event);
+		}
+
+
+		
 
 	}
 }

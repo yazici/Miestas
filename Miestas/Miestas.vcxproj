@@ -139,8 +139,10 @@
   <ItemGroup>
     <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\Core\Event\Event.h" />
+    <ClInclude Include="include\Core\Event\EventQueue.h" />
     <ClInclude Include="include\Core\Event\KeyboardEvents.h" />
     <ClInclude Include="include\Core\Event\MouseEvents.h" />
+    <ClInclude Include="include\Core\Event\Observable.h" />
     <ClInclude Include="include\Core\Event\WindowEvents.h" />
     <ClInclude Include="include\Core\KeyBindings.h" />
     <ClInclude Include="include\Core\Timer.h" />
@@ -669,6 +671,7 @@
     <None Include="shaders\TriangleTest.vs" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\Core\Event\EventQueue.cpp" />
     <ClCompile Include="include\Core\Timer.cpp" />
     <ClCompile Include="include\glm\detail\glm.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
