@@ -4,6 +4,7 @@
 #include "Renderer/Renderer.h"
 
 #include<memory>
+
 namespace Miestas
 {
 	using namespace Miestas::Renderer;
