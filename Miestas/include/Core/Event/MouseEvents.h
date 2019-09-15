@@ -25,10 +25,31 @@ namespace Miestas
 			REGISTER_EVENT(MouseScrollEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
-			float m_deltaY;
+			float m_deltaX, m_deltaY;
 
-			MouseScrollEvent(float deltaY) : m_deltaY(deltaY) { MIESTAS_LOG_INFO("Generated a MouseScrollEvent.") }
+			MouseScrollEvent(float deltaX, float deltaY) : m_deltaX(deltaX), m_deltaY(deltaY) { MIESTAS_LOG_INFO("Generated a MouseScrollEvent.") }
 
+		};
+
+		struct MouseButtonPressedEvent : public Event
+		{
+			REGISTER_EVENT(MouseButtonPressedEvent)
+			REGISTER_CATEGORY(ApplicationEvent)
+
+			int m_buttonPressed;
+
+			MouseButtonPressedEvent(int buttonPressed): m_buttonPressed(buttonPressed) { MIESTAS_LOG_INFO("Generated a MouseButtonPressedEvent.") }
+
+		};
+
+		struct MouseButtonReleasedEvent : public Event
+		{
+			REGISTER_EVENT(MouseButtonReleasedEvent)
+			REGISTER_CATEGORY(ApplicationEvent)
+
+			int m_buttonReleased;
+
+			MouseButtonReleasedEvent(int buttonReleased): m_buttonReleased(buttonReleased) { MIESTAS_LOG_INFO("Generated a MouseButtonReleasedEvent.") }
 		};
 	}
 }

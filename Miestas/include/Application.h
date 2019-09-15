@@ -10,6 +10,7 @@ namespace Miestas
 	class Application
 	{
 	private:
+		bool m_isRunning = true;
 		std::unique_ptr<Renderer> m_Renderer;
 
 	public:

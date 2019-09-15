@@ -1,8 +1,8 @@
-#ifndef EVENTS_H
-#define EVENTS_H
+#ifndef EVENT_H
+#define EVENT_H
 
-#define REGISTER_EVENT(e) EventType m_eventType = EventType::e;
-#define REGISTER_CATEGORY(e) EventCategory m_eventCategory = EventCategory::e;
+#define REGISTER_EVENT(e) EventType m_eventType = EventType::##e;
+#define REGISTER_CATEGORY(e) EventCategory m_eventCategory = EventCategory::##e;
 
 namespace Miestas
 {
@@ -19,9 +19,13 @@ namespace Miestas
 		enum class EventType
 		{
 			None = 0,
+
+			// Application Events
 			WindowResizeEvent, WindowCloseEvent,
 			KeyPressedEvent, KeyReleasedEvent,
-			MouseMovedEvent, MouseScrollEvent
+			MouseMovedEvent, MouseScrollEvent, MouseButtonPressedEvent, MouseButtonReleasedEvent
+
+			
 		};
 
 		
