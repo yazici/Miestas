@@ -30,13 +30,15 @@ namespace Miestas
 			m_windowHeight = root["WINDOW_HEIGHT"];
 			m_isFullScreen = root["WINDOW_FULLSCREEN"];
 
-
+			m_modelFileInfo = root["MODEL_FILE_INFO"];
+			m_shaderFileInfo = root["SHADER_FILE_INFO"];
 
 
 			MIESTAS_LOG_INFO("Succesfully loaded Config file: {0} ", filePath)
 			MIESTAS_LOG_INFO("Major Version: {0}", m_majorVersion)
 			MIESTAS_LOG_INFO("Minor Version: {0}", m_minorVersion)
 			MIESTAS_LOG_INFO("Application Name: {0}\n\n", m_applicationName)
+
 			m_readFromFile = true;
 		}
 	}
