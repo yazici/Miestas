@@ -9,7 +9,7 @@ namespace Miestas
 	{
 		struct Config
 		{
-			bool m_readFromFile = false;
+			bool m_readFromFile = false; // do we really need this? Keeping it in just in case.
 
 			// CONFIG DATA
 			unsigned int m_majorVersion;
