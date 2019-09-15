@@ -12,7 +12,7 @@
 
 #include "Core/Event/Event.h"
 #include "Core/Event/WindowEvents.h"
-
+#include "Core/Config.h"
 /*
 
 std::unique_ptr<Application> m_Application;
@@ -27,9 +27,12 @@ int main()
 	using namespace Miestas::Renderer;
 	using namespace Miestas::Core;
 
+	Config config;
+	config.readFromFile("C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\include\\Core\\Config.json");
+
 	FastNoise fnoise;
 
-	Window window;
+	Window window(config.m_applicationName, config.m_windowWidth, config.m_windowHeight);
 	window.init();
 
 	std::vector<float> vbdata;
@@ -88,7 +91,7 @@ int main()
 
 	MIESTAS_LOG_INFO("{0}", wrevent->m_eventType == EventType::None ? "None" : "WindowResize")
 
-		auto w = static_cast<WindowResizeEvent*>(wrevent);
+	auto w = static_cast<WindowResizeEvent*>(wrevent);
 	MIESTAS_LOG_INFO("{0}", w->m_eventType == EventType::None ? "None" : "WindowResize")
 	MIESTAS_LOG_INFO("{0}", w->m_newHeight)
 

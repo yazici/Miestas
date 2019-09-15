@@ -31,6 +31,8 @@ namespace Miestas
 
 			virtual void setEventQueue(EventQueue* eq) = 0;
 
+		private:
+
 			virtual void emitEvent(Event*) = 0;
 		};
 	}

@@ -1,0 +1,9 @@
+{
+  "MAJOR_VERSION": 0,
+  "MINOR_VERSION": 1,
+  "APPLICATION_NAME": "Miestas - A City Building Game",
+
+  "WINDOW_WIDTH": 800,
+  "WINDOW_HEIGHT": 600,
+  "WINDOW_FULLSCREEN":  false
+}

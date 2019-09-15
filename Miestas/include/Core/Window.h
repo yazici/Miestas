@@ -6,7 +6,7 @@
 #include "GLFW/glfw3.h"
 
 #include "Core/Event/Observable.h"
-#include "Event/EventQueue.h"
+#include "Core/Event/EventQueue.h"
 
 namespace Miestas
 {
@@ -46,6 +46,8 @@ namespace Miestas
 			virtual void onEvent(Event* event) override;
 
 			virtual void setEventQueue(EventQueue* eq) override;
+
+		private:
 
 			virtual void emitEvent(Event* event) override;
 

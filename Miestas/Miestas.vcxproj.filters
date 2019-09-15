@@ -1182,6 +1182,12 @@
     <ClInclude Include="include\Core\Event\Observable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Core\Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\glm\detail\func_common.inl">
@@ -1603,6 +1609,7 @@
     </None>
     <None Include="shaders\TriangleTest.vs" />
     <None Include="shaders\TriangleTest.fs" />
+    <None Include="include\Core\Config.json" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\glm\detail\glm.cpp">
@@ -1669,6 +1676,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Core\Event\EventQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Core\Config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
