@@ -5,13 +5,15 @@
 #include<algorithm>
 #include<cctype>
 
+#define STRING_TO_LOWER(x) std::transform(x.##begin(), x.##end(), x.##begin(), [](unsigned char ch){ return std::tolower(ch); });
 namespace Miestas
 {
 	namespace Renderer
 	{
-		void TextureManager::loadTexture(std::string & texturePath, aiTextureType textureType)
+		void TextureManager::loadTexture(const std::string & texturePath, aiTextureType textureType)
 		{
-			std::transform(texturePath.begin(), texturePath.end(), texturePath.begin(), [](unsigned char ch) { return std::tolower(ch); });
+			//std::transform(texturePath.begin(), texturePath.end(), texturePath.begin(), [](unsigned char ch) { return std::tolower(ch); });
+			STRING_TO_LOWER(const_cast<std::string&>(texturePath))
 
 			if (m_textureCache.find(texturePath) != m_textureCache.end())
 			{
@@ -23,10 +25,11 @@ namespace Miestas
 			m_textureCache.insert({ texturePath, texture });
 		}
 
-		std::shared_ptr<Texture> TextureManager::getTexture(std::string & texturePath)
+		std::shared_ptr<Texture> TextureManager::getTexture(const std::string & texturePath)
 		{
-			std::transform(texturePath.begin(), texturePath.end(), texturePath.begin(), [](unsigned char ch) { return std::tolower(ch); });
-
+			//std::transform(texturePath.begin(), texturePath.end(), texturePath.begin(), [](unsigned char ch) { return std::tolower(ch); });
+			STRING_TO_LOWER(const_cast<std::string&>(texturePath))
+			
 			auto textureLocation = m_textureCache.find(texturePath);
 			if (textureLocation == m_textureCache.end())
 			{

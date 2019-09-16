@@ -15,8 +15,8 @@
 #include "Core/Config.h"
 /*
 
-std::unique_ptr<Application> m_Application;
-m_Application->initializeApplication();
+std::unique_ptr<Application> m_Application = std::make_unique<Application>();
+m_Application->init();
 m_Application->run();
 
 */

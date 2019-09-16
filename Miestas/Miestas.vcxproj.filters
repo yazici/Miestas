@@ -1155,9 +1155,6 @@
     <ClInclude Include="include\Renderer\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Renderer\TextureManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Core\Event\WindowEvents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1186,6 +1183,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\json\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Renderer\Managers\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Renderer\Managers\ShaderManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1669,9 +1672,6 @@
     <ClCompile Include="include\Renderer\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\Renderer\TextureManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="miestas\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1679,6 +1679,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Core\Config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Renderer\Managers\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Renderer\Managers\ShaderManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

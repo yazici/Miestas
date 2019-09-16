@@ -3,7 +3,7 @@
 
 #include<vector>
 
-#include "TextureManager.h"
+#include "Managers/TextureManager.h"
 /*
 The main Renderer class. The class will contain a reference to camera objects, as well as all model data
 
