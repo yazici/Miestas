@@ -191,6 +191,7 @@
     <ClInclude Include="include\Renderer\assimp\vector3.h" />
     <ClInclude Include="include\Renderer\assimp\version.h" />
     <ClInclude Include="include\Renderer\AttributeLayout.h" />
+    <ClInclude Include="include\Renderer\CubeMap.h" />
     <ClInclude Include="include\Renderer\glad\glad.h" />
     <ClInclude Include="include\Renderer\GLFW\glfw3.h" />
     <ClInclude Include="include\Renderer\GLFW\glfw3native.h" />
@@ -687,6 +688,7 @@
     <ClCompile Include="include\imgui\imgui_draw.cpp" />
     <ClCompile Include="include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="include\Renderer\AttributeLayout.cpp" />
+    <ClCompile Include="include\Renderer\CubeMap.cpp" />
     <ClCompile Include="include\Renderer\IndexBuffer.cpp" />
     <ClCompile Include="include\Renderer\Managers\ShaderManager.cpp" />
     <ClCompile Include="include\Renderer\OrthoCamera.cpp" />

@@ -27,9 +27,9 @@ namespace Miestas
 
 			~TextureManager() = default;
 
-			void loadTexture(const std::string& texturePath, aiTextureType textureType);
+			void loadTexture(const std::string& textureName, const std::string& texturePath, aiTextureType textureType);
 
-			std::shared_ptr<Texture> getTexture(const std::string& texturePath);
+			std::shared_ptr<Texture> getTexture(const std::string& textureName);
 
 		};
 	}

@@ -14,6 +14,8 @@
 #include "Core/Event/WindowEvents.h"
 #include "Core/Config.h"
 #include "Managers/ShaderManager.h"
+
+#include "Renderer/CubeMap.h"
 /*
 
 std::unique_ptr<Application> m_Application = std::make_unique<Application>();

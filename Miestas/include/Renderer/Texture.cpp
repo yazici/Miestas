@@ -31,7 +31,7 @@ namespace Miestas
 			{
 				MIESTAS_FAILURE("Unable to load texture data. File: {0}", texturePath)
 			}
-
+			
 			if (channels == 3)
 				glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, textureData);
 			else if (channels == 4)
