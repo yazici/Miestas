@@ -11,6 +11,7 @@ The Renderer has no direct contact with Textures.
 #include<optional>
 
 #include "Texture.h"
+#include "CubeMap.h"
 
 #include <assimp/scene.h>
 
@@ -22,12 +23,15 @@ namespace Miestas
 		{
 		private:
 			std::unordered_map<std::string, std::shared_ptr<Texture>> m_textureCache;
+			std::unordered_map<std::string, std::shared_ptr<CubeMap>> m_cubeMapCache;
 
 		public:
 
 			~TextureManager() = default;
 
 			void loadTexture(const std::string& textureName, const std::string& texturePath, aiTextureType textureType);
+
+			void loadTexture(const std::string& textureName, const std::vector<std::string>& texturePaths);
 
 			std::shared_ptr<Texture> getTexture(const std::string& textureName);
 
