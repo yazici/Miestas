@@ -7,6 +7,7 @@
   "WINDOW_HEIGHT": 600,
   "WINDOW_FULLSCREEN": false,
 
-  "MODEL_FILE_INFO": "",
-  "SHADER_FILE_INFO":  ""
+  "MODEL_FILE_INFO": "ModelConfig.json",
+  "SHADER_FILE_INFO": "ShaderConfig.json",
+  "TERRAIN_FILE_INFO": "TerrainConfig.json"
 }

@@ -2,8 +2,11 @@
 #define RENDERER_H
 
 #include<vector>
+#include<memory>
 
 #include "Managers/TextureManager.h"
+#include "Managers/ShaderManager.h"
+
 /*
 The main Renderer class. The class will contain a reference to camera objects, as well as all model data
 
@@ -19,7 +22,8 @@ namespace Miestas
 		{
 		private:
 
-			TextureManager m_textureManager;
+			std::unique_ptr<TextureManager> m_textureManager;
+			std::unique_ptr<ShaderManager> m_shaderManager;
 
 		public:
 			

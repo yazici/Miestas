@@ -37,7 +37,7 @@ namespace Miestas
 			m_shaderCache.insert({ shaderName, shader });
 		}
 
-		std::shared_ptr<Shader> ShaderManager::getShader(std::string & shaderName)
+		std::shared_ptr<Shader> ShaderManager::getShader(const std::string & shaderName)
 		{
 
 			STRING_TO_LOWER(const_cast<std::string&>(shaderName))

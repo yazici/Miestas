@@ -32,7 +32,7 @@ namespace Miestas
 
 			m_modelFileInfo = root["MODEL_FILE_INFO"];
 			m_shaderFileInfo = root["SHADER_FILE_INFO"];
-
+			m_terrainFileInfo = root["TERRAIN_FILE_INFO"];
 
 			MIESTAS_LOG_INFO("Succesfully loaded Config file: {0} ", filePath)
 			MIESTAS_LOG_INFO("Major Version: {0}", m_majorVersion)

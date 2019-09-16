@@ -18,5 +18,30 @@ namespace Miestas
 			}
 
 		}
+
+		void Renderer::init()
+		{
+			m_textureManager = std::make_unique<TextureManager>();
+			m_shaderManager = std::make_unique<ShaderManager>();
+
+
+		}
+
+		void Renderer::beginScene() const
+		{
+
+		}
+
+		void Renderer::renderScene() const
+		{
+
+		}
+
+		void Renderer::endScene()
+		{
+
+		}
+
+
 	} 
 }

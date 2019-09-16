@@ -23,7 +23,7 @@ namespace Miestas
 
 			void loadShader(const std::string& shaderName, const std::string& vertexShaderPath, const std::string& fragmentShaderPath, const std::string& geometryShaderPath);
 
-			std::shared_ptr<Shader> getShader(std::string& shaderName);
+			std::shared_ptr<Shader> getShader(const std::string& shaderName);
 		};
 	}
 }

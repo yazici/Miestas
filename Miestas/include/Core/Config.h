@@ -24,10 +24,11 @@ namespace Miestas
 			// FILE_INFO
 			std::string m_modelFileInfo; // Path to JSON file containing all model info to be loaded
 			std::string m_shaderFileInfo; // Path to JSON file containing all shader info to be loaded
+			std::string m_terrainFileInfo; // Path to JSON file containing procedural terrain info 
 
 
 			// Reads config data from JSON
-			void readFromFile(const std::string& filePath);
+			void readFromFile(const std::string& filePath = "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\configs\\Config.json");
 		};
 	}
 }

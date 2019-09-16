@@ -13,6 +13,7 @@
 #include "Core/Event/Event.h"
 #include "Core/Event/WindowEvents.h"
 #include "Core/Config.h"
+#include "Managers/ShaderManager.h"
 /*
 
 std::unique_ptr<Application> m_Application = std::make_unique<Application>();
@@ -27,9 +28,10 @@ int main()
 	using namespace Miestas::Renderer;
 	using namespace Miestas::Core;
 
-	Config config;
-	config.readFromFile("C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\include\\Core\\Config.json");
 
+	Config config;
+	config.readFromFile("C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\configs\\Config.json");
+	//config.readFromFile();
 	FastNoise fnoise;
 
 	Window window(config.m_applicationName, config.m_windowWidth, config.m_windowHeight);
@@ -84,8 +86,10 @@ int main()
 	//}
 
 
-	auto shader = std::make_unique<Shader>("TriangleTest", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.vs", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.fs");
-
+	//auto shader = std::make_unique<Shader>("TriangleTest", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.vs", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.fs");
+	ShaderManager shaderManager;
+	shaderManager.loadShader("TriangleTest", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.vs", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.fs");
+	shaderManager.loadShader("TriangleTest", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.vs", "C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\shaders\\TriangleTest.fs");
 	auto vbo = std::unique_ptr<VertexBuffer>(new VertexBuffer(std::move(vbdata), { {3, GL_FLOAT, false} }));
 
 	auto ibo = std::make_unique<IndexBuffer>(std::move(idata));
@@ -111,7 +115,8 @@ int main()
 	{
 		timer.reset();
 		window.clearWindow(0.0f, 0.0f, 0.0f, 1.0f);
-		shader->bind();
+		shaderManager.getShader("Triangletest")->bind();
+		//shader->bind();
 		va->bind();
 		va->render();
 		window.updateWindow();
