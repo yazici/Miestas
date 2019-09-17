@@ -12,6 +12,7 @@ namespace Miestas
 	{
 		Window::~Window()
 		{
+			glfwDestroyWindow(m_Window);
 			glfwTerminate();
 		}
 
@@ -59,6 +60,31 @@ namespace Miestas
 			{
 				MIESTAS_FAILURE("Failed to initialize GLAD")
 			}
+			
+			// 
+			glfwSetWindowUserPointer(m_Window, this);
+			
+			// Set resize callback
+			glfwSetFramebufferSizeCallback(m_Window, [](GLFWwindow* window, int newWidth, int newHeight)
+			{
+				auto& thisWindow = *static_cast<Window*>(glfwGetWindowUserPointer(window));
+				glViewport(0, 0, newWidth, newHeight);
+				Event* event = new WindowResizeEvent(newWidth, newHeight);
+
+				delete event;
+				//thisWindow.emitEvent(new WindowResizeEvent(newWidth, newHeight));
+			});
+
+			// Set window close callback
+			glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
+			{
+				auto& thisWindow = *static_cast<Window*>(glfwGetWindowUserPointer(window));
+				Event* event = new WindowCloseEvent();
+
+				delete event;
+			});
+
+
 
 			MIESTAS_LOG_INFO("Successfully created and initialized window.")
 

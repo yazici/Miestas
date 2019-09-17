@@ -9,6 +9,7 @@
 
 #include<vector>
 #include<memory>
+#include<iostream>
 
 #include "Core/Event/Event.h"
 #include "Core/Event/WindowEvents.h"
@@ -105,14 +106,6 @@ int main()
 
 	Timer timer;
 
-	Event* wrevent = new WindowResizeEvent(800, 600);
-
-	MIESTAS_LOG_INFO("{0}", wrevent->m_eventType == EventType::None ? "None" : "WindowResize")
-
-	auto w = static_cast<WindowResizeEvent*>(wrevent);
-	MIESTAS_LOG_INFO("{0}", w->m_eventType == EventType::None ? "None" : "WindowResize")
-	MIESTAS_LOG_INFO("{0}", w->m_newHeight)
-
 	while (!window.shouldClose())
 	{
 		timer.reset();
@@ -124,5 +117,7 @@ int main()
 		window.updateWindow();
 		timer.stop();
 	}
+
+	std::cin.get();
 
 }

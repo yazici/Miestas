@@ -18,8 +18,10 @@ namespace Miestas
 
 		// Initialize m_eventQueue at the end after all the systems have been initialized
 		// And then register each event with m_eventQueue
-		m_eventQueue = std::make_unique<EventQueue>();
+		m_appEventQueue = std::make_unique<EventQueue>();
 		
+		m_eventQueue->registerObservable(EventType::WindowResizeEvent, this); // Don't think we really need to send events from Window to Application, but I'll keep it just in case 
+		m_eventQueue->registerObservable(EventType::WindowCloseEvent, this);
 	}
 
 	void Application::run()
@@ -30,5 +32,35 @@ namespace Miestas
 	void Application::close()
 	{
 	}
+
+	void Application::onEvent(Event* event)
+	{
+		if (event->m_eventType == EventType::WindowCloseEvent)
+		{
+			m_isRunning = false;
+			return;
+		}
+		else if (event->m_eventType == EventType::WindowResizeEvent)
+		{
+			// do nothing for now
+		}
+	}
+
+	void Application::setEventQueue(EventQueue * eq)
+	{
+		m_eventQueue = eq;
+	}
+
+	void Application::emitEvent(Event * event)
+	{
+		m_eventQueue->addEventToQueue(event);
+	}
+
+
+
+
+
+
+
 
 }
