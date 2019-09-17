@@ -47,9 +47,11 @@ namespace Miestas
 
 			virtual void setEventQueue(EventQueue* eq) override;
 
-		private:
+
+		//private:
 
 			virtual void emitEvent(Event* event) override;
+
 
 		};
 	}

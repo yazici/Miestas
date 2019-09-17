@@ -105,7 +105,8 @@ int main()
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	Timer timer;
-
+	EventQueue* eq = new EventQueue;
+	window.setEventQueue(eq);
 	while (!window.shouldClose())
 	{
 		timer.reset();

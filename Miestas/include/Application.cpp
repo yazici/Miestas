@@ -10,7 +10,7 @@ namespace Miestas
 		m_Config = std::make_unique<Config>();
 		m_Config->readFromFile("C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\include\\Core\\Config.json");
 
-		// Initialize the window
+		// Initialize all the systems
 		m_Window = std::make_unique<Window>(m_Config->m_applicationName, m_Config->m_windowWidth, m_Config->m_windowHeight);
 
 		m_Renderer = std::make_unique<MiestasRenderer>();
@@ -19,7 +19,11 @@ namespace Miestas
 		// Initialize m_eventQueue at the end after all the systems have been initialized
 		// And then register each event with m_eventQueue
 		m_appEventQueue = std::make_unique<EventQueue>();
-		
+
+
+		// EventType::None for now
+		m_eventQueue->registerObservable(EventType::None, m_Window.get());
+
 		m_eventQueue->registerObservable(EventType::WindowResizeEvent, this); // Don't think we really need to send events from Window to Application, but I'll keep it just in case 
 		m_eventQueue->registerObservable(EventType::WindowCloseEvent, this);
 	}

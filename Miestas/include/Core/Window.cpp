@@ -3,8 +3,10 @@
 #include "Window.h"
 #include "Logger/Logger.h"
 #include "Core/Event/WindowEvents.h"
+#include "Core/Event/KeyboardEvents.h"
+#include "Core/Event/MouseEvents.h"
+#include "Core/KeyBindings.h"
 
-#include<functional>
 
 namespace Miestas
 {
@@ -61,30 +63,33 @@ namespace Miestas
 				MIESTAS_FAILURE("Failed to initialize GLAD")
 			}
 			
-			// 
+			// Need to do this, since lambdas with captures cannot be converted into function pointers
 			glfwSetWindowUserPointer(m_Window, this);
 			
 			// Set resize callback
 			glfwSetFramebufferSizeCallback(m_Window, [](GLFWwindow* window, int newWidth, int newHeight)
 			{
-				auto& thisWindow = *static_cast<Window*>(glfwGetWindowUserPointer(window));
+				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
 				glViewport(0, 0, newWidth, newHeight);
 				Event* event = new WindowResizeEvent(newWidth, newHeight);
 
-				delete event;
-				//thisWindow.emitEvent(new WindowResizeEvent(newWidth, newHeight));
+				delete event; // For now, need to remove it later
+				thisWindow->emitEvent(new WindowResizeEvent(newWidth, newHeight));
 			});
 
 			// Set window close callback
 			glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
 			{
-				auto& thisWindow = *static_cast<Window*>(glfwGetWindowUserPointer(window));
+				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
 				Event* event = new WindowCloseEvent();
 
 				delete event;
 			});
 
 
+			// TODO: Callbacks for mouse movement, mouse press, mouse scroll and keyboard press
+
+			
 
 			MIESTAS_LOG_INFO("Successfully created and initialized window.")
 
@@ -116,7 +121,7 @@ namespace Miestas
 		{
 			m_eventQueue = eq;
 		}
-
+		
 		void Window::emitEvent(Event * event)
 		{
 			m_eventQueue->addEventToQueue(event);
