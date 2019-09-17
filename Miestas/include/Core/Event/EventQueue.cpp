@@ -31,6 +31,8 @@ namespace Miestas
 				}
 			}
 
+			m_eventList.clear();
+
 			MIESTAS_LOG_INFO("Succesfully dispatched all events.")
 		}
 
