@@ -18,6 +18,8 @@ namespace Miestas
 
 			MouseMovedEvent(float newX, float newY): m_newX(newX), m_newY(newY) { MIESTAS_LOG_INFO("Generated a MouseMovedEvent.") }
 
+			GET_TYPE()
+
 		};
 
 		struct MouseScrollEvent : public Event
@@ -28,6 +30,8 @@ namespace Miestas
 			float m_deltaX, m_deltaY;
 
 			MouseScrollEvent(float deltaX, float deltaY) : m_deltaX(deltaX), m_deltaY(deltaY) { MIESTAS_LOG_INFO("Generated a MouseScrollEvent.") }
+
+			GET_TYPE()
 
 		};
 
@@ -40,6 +44,8 @@ namespace Miestas
 
 			MouseButtonPressedEvent(int buttonPressed): m_buttonPressed(buttonPressed) { MIESTAS_LOG_INFO("Generated a MouseButtonPressedEvent.") }
 
+			GET_TYPE(override)
+
 		};
 
 		struct MouseButtonReleasedEvent : public Event
@@ -50,6 +56,8 @@ namespace Miestas
 			int m_buttonReleased;
 
 			MouseButtonReleasedEvent(int buttonReleased): m_buttonReleased(buttonReleased) { MIESTAS_LOG_INFO("Generated a MouseButtonReleasedEvent.") }
+
+			GET_TYPE(override)
 		};
 	}
 }

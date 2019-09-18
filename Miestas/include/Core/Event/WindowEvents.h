@@ -17,6 +17,8 @@ namespace Miestas
 			unsigned int m_newWidth, m_newHeight;
 
 			WindowResizeEvent(unsigned int newWidth, unsigned int newHeight) : m_newWidth(newWidth), m_newHeight(newHeight) { MIESTAS_LOG_INFO("Generated a WindowResizeEvent.") }
+
+			GET_TYPE(override)
 		};
 
 		struct WindowCloseEvent : public Event
@@ -25,6 +27,8 @@ namespace Miestas
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			WindowCloseEvent() { MIESTAS_LOG_INFO("Generated a WindowCloseEvent.") }
+
+			GET_TYPE(override)
 		};
 	}
 }

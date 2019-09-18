@@ -43,14 +43,14 @@ namespace Miestas
 
 			bool shouldClose() const;
 
-			virtual void onEvent(Event* event) override;
+			virtual void onEvent(std::shared_ptr<Event> event) override;
 
 			virtual void setEventQueue(EventQueue* eq) override;
 
 
 		//private:
 
-			virtual void emitEvent(Event* event) override;
+			virtual void emitEvent(std::shared_ptr<Event> event) override;
 
 
 		};

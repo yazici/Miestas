@@ -48,6 +48,10 @@ namespace Miestas
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
+#ifdef DEBUG_BUILD
+			glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+#endif
+
 			m_Window = glfwCreateWindow(m_Width, m_Height, m_windowTitle.c_str(), nullptr, nullptr);
 
 			if (!m_Window)
@@ -71,24 +75,61 @@ namespace Miestas
 			{
 				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
 				glViewport(0, 0, newWidth, newHeight);
-				Event* event = new WindowResizeEvent(newWidth, newHeight);
-
-				delete event; // For now, need to remove it later
-				thisWindow->emitEvent(new WindowResizeEvent(newWidth, newHeight));
+				
+				thisWindow->emitEvent(std::move(std::make_shared<WindowResizeEvent>(newWidth, newHeight)));
 			});
 
 			// Set window close callback
 			glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
 			{
 				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
-				Event* event = new WindowCloseEvent();
-
-				delete event;
+				
+				
+				thisWindow->emitEvent(std::move(std::make_shared<WindowCloseEvent>()));
 			});
 
 
-			// TODO: Callbacks for mouse movement, mouse press, mouse scroll and keyboard press
+			// Set mouse movement callback
+			glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double newX, double newY)
+			{
+				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
 
+				thisWindow->emitEvent(std::move(std::make_shared<MouseMovedEvent>(static_cast<float>(newX), static_cast<float>(newY))));
+			});
+
+			// Set mouse button callbacks
+			glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)
+			{
+				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
+				
+				if (action == GLFW_PRESS)
+					thisWindow->emitEvent(std::make_shared<MouseButtonPressedEvent>(button));
+				else if (action == GLFW_RELEASE)
+					thisWindow->emitEvent(std::move(std::make_shared<MouseButtonReleasedEvent>(button)));
+
+			});
+
+
+			// Set mouse scroll callback
+			glfwSetScrollCallback(m_Window, [](GLFWwindow* window, double deltaX, double deltaY)
+			{
+				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
+
+				thisWindow->emitEvent(std::move(std::make_shared<MouseScrollEvent>(static_cast<float>(deltaX), static_cast<float>(deltaY))));
+			});
+
+			// Set keyboard input callback
+			glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mode)
+			{
+				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
+
+				if (action == GLFW_PRESS)
+					thisWindow->emitEvent(std::move(std::make_shared<KeyPressedEvent>(key)));
+				else if (action == GLFW_REPEAT)
+					thisWindow->emitEvent(std::move(std::make_shared<KeyPressedEvent>(key, true)));
+				else if (action == GLFW_RELEASE)
+					thisWindow->emitEvent(std::move(std::make_shared<KeyReleasedEvent>(key)));
+			});
 			
 
 			MIESTAS_LOG_INFO("Successfully created and initialized window.")
@@ -112,7 +153,7 @@ namespace Miestas
 			return glfwWindowShouldClose(m_Window);
 		}
 
-		void Window::onEvent(Event * event)
+		void Window::onEvent(std::shared_ptr<Event> event)
 		{
 			// TODO
 		}
@@ -122,7 +163,7 @@ namespace Miestas
 			m_eventQueue = eq;
 		}
 		
-		void Window::emitEvent(Event * event)
+		void Window::emitEvent(std::shared_ptr<Event> event)
 		{
 			m_eventQueue->addEventToQueue(event);
 		}

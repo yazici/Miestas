@@ -37,7 +37,7 @@ namespace Miestas
 	{
 	}
 
-	void Application::onEvent(Event* event)
+	void Application::onEvent(std::shared_ptr<Event> event)
 	{
 		if (event->m_eventType == EventType::WindowCloseEvent)
 		{
@@ -55,7 +55,7 @@ namespace Miestas
 		m_eventQueue = eq;
 	}
 
-	void Application::emitEvent(Event * event)
+	void Application::emitEvent(std::shared_ptr<Event> event)
 	{
 		m_eventQueue->addEventToQueue(event);
 	}

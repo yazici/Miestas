@@ -1,6 +1,7 @@
 #include "EventQueue.h"
 #include "Logger/Logger.h"
 
+#include<iostream>
 namespace Miestas
 {
 	namespace Core
@@ -11,16 +12,18 @@ namespace Miestas
 			observable->setEventQueue(this);
 		}
 
-		void EventQueue::addEventToQueue(Event * event)
+		void EventQueue::addEventToQueue(std::shared_ptr<Event> event)
 		{
 			m_eventList.push_back(event);
+			MIESTAS_LOG_INFO("Added event to eventList")
 		}
 
 		void EventQueue::dispatchEvents()
 		{
 			for (auto& event : m_eventList)
 			{
-				auto observables = m_eventMap.find(event->m_eventType);
+				auto type = event->getType();
+				auto observables = m_eventMap.find(type);
 
 				if (observables == m_eventMap.end())
 					continue;
@@ -29,11 +32,11 @@ namespace Miestas
 				{
 					system->onEvent(event);
 				}
+
 			}
 
 			m_eventList.clear();
 
-			MIESTAS_LOG_INFO("Succesfully dispatched all events.")
 		}
 
 

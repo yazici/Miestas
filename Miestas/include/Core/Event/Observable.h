@@ -14,6 +14,8 @@
 
 #include<memory>
 
+#define STATIC_PTR_CAST(x, y) std::static_pointer_cast<x>(y);
+
 namespace Miestas
 {
 	namespace Core
@@ -27,13 +29,13 @@ namespace Miestas
 
 		public:
 
-			virtual void onEvent(Event*) = 0;
+			virtual void onEvent(std::shared_ptr<Event>) = 0;
 
 			virtual void setEventQueue(EventQueue* eq) = 0;
 
 		private:
 
-			virtual void emitEvent(Event*) = 0;
+			virtual void emitEvent(std::shared_ptr<Event>) = 0;
 		};
 	}
 }
