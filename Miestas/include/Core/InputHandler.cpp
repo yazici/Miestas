@@ -28,7 +28,7 @@ namespace Miestas
 			case EventType::KeyPressedEvent:
 				auto a = STATIC_PTR_CAST(KeyPressedEvent, event)
 				MIESTAS_LOG_INFO(a->m_keyPressed)
-				if (a->m_keyPressed == MIESTAS_KEY_A)
+				if (a->m_keyPressed == MIESTAS_KEY_ESCAPE)
 				{
 					emitEvent(std::make_shared<WindowCloseEvent>());
 					return;

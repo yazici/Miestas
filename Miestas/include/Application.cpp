@@ -1,6 +1,9 @@
 #include "Application.h"
 #include "Logger/Logger.h"
 
+
+#include "Core/Event/KeyboardEvents.h"
+
 namespace Miestas
 {
 	using namespace Miestas::Renderer;
@@ -53,7 +56,10 @@ namespace Miestas
 
 		m_appEventQueue->registerObservable(EventType::WindowResizeEvent, this); // Don't think we really need to send events from Window to Application, but I'll keep it just in case 
 		m_appEventQueue->registerObservable(EventType::WindowCloseEvent, this);
+
+
 	}
+
 
 	
 
@@ -78,7 +84,7 @@ namespace Miestas
 		{
 			MIESTAS_LOG_INFO("Received a CloseEvent.")
 			m_isRunning = false;
-			return;
+			//return;
 		}
 		else if (event->getType() == EventType::WindowResizeEvent)
 		{

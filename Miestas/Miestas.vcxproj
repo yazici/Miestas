@@ -150,6 +150,7 @@
     <ClInclude Include="include\Core\Timer.h" />
     <ClInclude Include="include\json\json.hpp" />
     <ClInclude Include="include\Logger\Logger.h" />
+    <ClInclude Include="include\Miestas\GameState.h" />
     <ClInclude Include="include\Renderer\assimp\ai_assert.h" />
     <ClInclude Include="include\Renderer\assimp\anim.h" />
     <ClInclude Include="include\Renderer\assimp\camera.h" />

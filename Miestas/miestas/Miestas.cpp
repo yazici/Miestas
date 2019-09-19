@@ -35,7 +35,7 @@ int main()
 
 	m_Application->run();
 
-	std::cin.get();
+	//std::cin.get();
 }
 
 //int main()

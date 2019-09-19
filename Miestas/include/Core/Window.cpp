@@ -52,9 +52,14 @@ namespace Miestas
 			glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 #endif
 			if (m_isFullScreen)
-				m_Window = glfwCreateWindow(m_Width, m_Height, m_windowTitle.c_str(), glfwGetPrimaryMonitor(), nullptr);
+			{
+				auto mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+				m_Window = glfwCreateWindow(mode->width, mode->height, m_windowTitle.c_str(), glfwGetPrimaryMonitor(), nullptr);
+			}
 			else
+			{
 				m_Window = glfwCreateWindow(m_Width, m_Height, m_windowTitle.c_str(), nullptr, nullptr);
+			}
 
 			if (!m_Window)
 			{

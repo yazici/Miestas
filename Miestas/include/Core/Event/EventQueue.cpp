@@ -1,7 +1,8 @@
 #include "EventQueue.h"
 #include "Logger/Logger.h"
 
-#include<iostream>
+#include<algorithm>
+
 namespace Miestas
 {
 	namespace Core
@@ -14,11 +15,14 @@ namespace Miestas
 
 		void EventQueue::addEventToQueue(std::shared_ptr<Event> event)
 		{
-			m_eventList.push_back(event);
+			m_nextFrameEventList.push_back(event);
 		}
+
 
 		void EventQueue::dispatchEvents()
 		{
+			std::swap(m_eventList, m_nextFrameEventList);
+
 			if (m_eventList.size() == 0)
 				return;
 
