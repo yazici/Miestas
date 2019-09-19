@@ -16,7 +16,7 @@ namespace Miestas
 			float m_cameraSpeed;
 
 		public:
-
+			
 			OrthoCamera(float a, float b, float c, float d, float cs = 0.5f);
 
 			void setOrthoParameters(float a, float b, float c, float d); 

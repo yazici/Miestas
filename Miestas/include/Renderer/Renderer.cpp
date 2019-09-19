@@ -23,23 +23,38 @@ namespace Miestas
 		{
 			m_textureManager = std::make_unique<TextureManager>();
 			m_shaderManager = std::make_unique<ShaderManager>();
-
-
+			m_orthoCamera = std::make_unique<OrthoCamera>(-400.0f, 400.0f, 0.01f, 100.0f); // for now
 		}
 
-		void Renderer::beginScene() const
+		void Renderer::beginScene()
 		{
-
+			m_viewProjectionMatrix = m_orthoCamera->getViewProjection();
 		}
 
 		void Renderer::renderScene() const
 		{
-
+			// TODO: Rendering code
 		}
 
 		void Renderer::endScene()
 		{
+			// Empty for now
+			// One idea for endScene is to update the view matrix of the camera at the end of every call
+		}
 
+		void Renderer::onEvent(std::shared_ptr<Event> event)
+		{
+			// Receives transformations from the game state and applies to objects (?)
+		}
+
+		void Renderer::setEventQueue(EventQueue * eq)
+		{
+			m_eventQueue = eq;
+		}
+
+		void Renderer::emitEvent(std::shared_ptr<Event> event)
+		{
+			m_eventQueue->addEventToQueue(std::move(event));
 		}
 
 

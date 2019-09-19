@@ -46,6 +46,8 @@ namespace Miestas
 			return m_projectionMatrix * m_viewMatrix;
 		}
 
+		
+
 
 
 

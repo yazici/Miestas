@@ -1,6 +1,7 @@
 #include "InputHandler.h"
 #include "Logger/Logger.h"
 #include "Core/Event/KeyboardEvents.h"
+#include "Core/Event/WindowEvents.h"
 #include "Core/KeyBindings.h"
 
 namespace Miestas
@@ -9,7 +10,7 @@ namespace Miestas
 	{
 		void InputHandler::init()
 		{
-
+			return;
 		}
 
 
@@ -23,6 +24,15 @@ namespace Miestas
 			case EventType::MouseButtonPressedEvent:
 				MIESTAS_LOG_INFO("Input Handler: Mouse Clicked")
 				break;
+
+			case EventType::KeyPressedEvent:
+				auto a = STATIC_PTR_CAST(KeyPressedEvent, event)
+				MIESTAS_LOG_INFO(a->m_keyPressed)
+				if (a->m_keyPressed == MIESTAS_KEY_A)
+				{
+					emitEvent(std::make_shared<WindowCloseEvent>());
+					return;
+				}
 			}
 		}
 

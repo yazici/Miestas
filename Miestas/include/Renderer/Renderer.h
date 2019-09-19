@@ -4,9 +4,12 @@
 #include<vector>
 #include<memory>
 
+
 #include "Managers/TextureManager.h"
 #include "Managers/ShaderManager.h"
-
+#include "Renderer/OrthoCamera.h"
+#include "Core/Event/Event.h"
+#include "Core/Event/EventQueue.h"
 /*
 The main Renderer class. The class will contain a reference to camera objects, as well as all model data
 
@@ -18,24 +21,38 @@ namespace Miestas
 {
 	namespace Renderer
 	{
-		class Renderer
+
+		using namespace Miestas::Core;
+		class Renderer: public Observable
 		{
 		private:
-
+			
 			std::unique_ptr<TextureManager> m_textureManager;
 			std::unique_ptr<ShaderManager> m_shaderManager;
+			std::unique_ptr<OrthoCamera> m_orthoCamera;
+
+			glm::mat4 m_viewProjectionMatrix;
+
+			EventQueue* m_eventQueue;
 
 		public:
 			
+
 			void setWireframeMode(bool mode);
 
 			void init();
 
-			void beginScene() const;
+			void beginScene();
 
 			void renderScene() const;
 
 			void endScene();
+
+			virtual void onEvent(std::shared_ptr<Event> event) override;
+
+			virtual void setEventQueue(EventQueue* eq) override;
+
+			virtual void emitEvent(std::shared_ptr<Event> event) override;
 		};
 	}
 }

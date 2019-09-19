@@ -18,9 +18,10 @@ namespace Miestas
 			int m_keyPressed;
 			bool m_isRepeated;
 
-			KeyPressedEvent(int keyPressed, bool isRepeated = false) : m_keyPressed(keyPressed), m_isRepeated(isRepeated) { MIESTAS_LOG_INFO("Generated a KeyPressedEvent: {0}", m_keyPressed) }
+			KeyPressedEvent(int keyPressed, bool isRepeated = false) : m_keyPressed(keyPressed), m_isRepeated(isRepeated) {  }
 
 			GET_TYPE(override)
+			GET_CATEGORY(override)
 		};
 
 		struct KeyReleasedEvent : public Event
@@ -30,9 +31,10 @@ namespace Miestas
 
 			int m_keyReleased;
 
-			KeyReleasedEvent(int keyReleased) : m_keyReleased(keyReleased) { MIESTAS_LOG_INFO("Generated a KeyReleasedEvent: {0}", m_keyReleased) }
+			KeyReleasedEvent(int keyReleased) : m_keyReleased(keyReleased) {  }
 
 			GET_TYPE(override)
+			GET_CATEGORY(override)
 
 		};
 	}

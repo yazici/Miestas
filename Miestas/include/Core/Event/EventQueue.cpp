@@ -15,11 +15,13 @@ namespace Miestas
 		void EventQueue::addEventToQueue(std::shared_ptr<Event> event)
 		{
 			m_eventList.push_back(event);
-			MIESTAS_LOG_INFO("Added event to eventList")
 		}
 
 		void EventQueue::dispatchEvents()
 		{
+			if (m_eventList.size() == 0)
+				return;
+
 			for (auto& event : m_eventList)
 			{
 				auto type = event->getType();
@@ -28,7 +30,7 @@ namespace Miestas
 				if (observables == m_eventMap.end())
 					continue;
 
-				for (auto& system : observables->second)
+				for (auto system : observables->second)
 				{
 					system->onEvent(event);
 				}

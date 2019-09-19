@@ -16,9 +16,10 @@ namespace Miestas
 
 			float m_newX, m_newY;
 
-			MouseMovedEvent(float newX, float newY): m_newX(newX), m_newY(newY) { MIESTAS_LOG_INFO("Generated a MouseMovedEvent.") }
+			MouseMovedEvent(float newX, float newY): m_newX(newX), m_newY(newY) {  }
 
-			GET_TYPE()
+			GET_TYPE(override)
+			GET_CATEGORY(override)
 
 		};
 
@@ -29,9 +30,10 @@ namespace Miestas
 
 			float m_deltaX, m_deltaY;
 
-			MouseScrollEvent(float deltaX, float deltaY) : m_deltaX(deltaX), m_deltaY(deltaY) { MIESTAS_LOG_INFO("Generated a MouseScrollEvent.") }
+			MouseScrollEvent(float deltaX, float deltaY) : m_deltaX(deltaX), m_deltaY(deltaY) {  }
 
-			GET_TYPE()
+			GET_TYPE(override)
+			GET_CATEGORY(override)
 
 		};
 
@@ -42,9 +44,10 @@ namespace Miestas
 
 			int m_buttonPressed;
 
-			MouseButtonPressedEvent(int buttonPressed): m_buttonPressed(buttonPressed) { MIESTAS_LOG_INFO("Generated a MouseButtonPressedEvent.") }
+			MouseButtonPressedEvent(int buttonPressed): m_buttonPressed(buttonPressed) {  }
 
 			GET_TYPE(override)
+			GET_CATEGORY(override)
 
 		};
 
@@ -55,9 +58,10 @@ namespace Miestas
 
 			int m_buttonReleased;
 
-			MouseButtonReleasedEvent(int buttonReleased): m_buttonReleased(buttonReleased) { MIESTAS_LOG_INFO("Generated a MouseButtonReleasedEvent.") }
+			MouseButtonReleasedEvent(int buttonReleased): m_buttonReleased(buttonReleased) {  }
 
 			GET_TYPE(override)
+			GET_CATEGORY(override)
 		};
 	}
 }

@@ -19,15 +19,17 @@ namespace Miestas
 			unsigned int m_Width;
 			unsigned int m_Height;
 			bool m_vSyncEnabled;
+			bool m_isFullScreen;
+
 			GLFWwindow* m_Window;
 			EventQueue* m_eventQueue;
 
 		public:
 
-			Window() : m_windowTitle("Miestas Debug"), m_Width(800), m_Height(600), m_Window(nullptr), m_vSyncEnabled(false) {}
+			Window() : m_windowTitle("Miestas Debug"), m_Width(800), m_Height(600), m_Window(nullptr), m_vSyncEnabled(false), m_isFullScreen(false) {}
 
-			Window(const std::string& wt, unsigned int mw = 800, unsigned int mh = 600):
-				m_windowTitle(wt), m_Width(mw), m_Height(mh), m_vSyncEnabled(false) {}
+			Window(const std::string& wt, unsigned int mw = 800, unsigned int mh = 600, bool fullScreen = false):
+				m_windowTitle(wt), m_Width(mw), m_Height(mh), m_vSyncEnabled(false), m_isFullScreen(fullScreen) {}
 
 			~Window();
 

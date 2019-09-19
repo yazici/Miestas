@@ -33,8 +33,6 @@ namespace Miestas
 
 			virtual void setEventQueue(EventQueue* eq) = 0;
 
-		private:
-
 			virtual void emitEvent(std::shared_ptr<Event>) = 0;
 		};
 	}
