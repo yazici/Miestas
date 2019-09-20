@@ -1200,6 +1200,9 @@
     <ClInclude Include="include\Miestas\GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Renderer\TerrainGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\glm\detail\func_common.inl">
@@ -1703,6 +1706,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Core\InputHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Renderer\TerrainGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

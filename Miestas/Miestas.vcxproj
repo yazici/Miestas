@@ -526,6 +526,7 @@
     <ClInclude Include="include\Renderer\Renderer.h" />
     <ClInclude Include="include\Renderer\Shader.h" />
     <ClInclude Include="include\Renderer\stb_image\stb_image.h" />
+    <ClInclude Include="include\Renderer\TerrainGenerator.h" />
     <ClInclude Include="include\Renderer\Texture.h" />
     <ClInclude Include="include\Renderer\Managers\TextureManager.h" />
     <ClInclude Include="include\Renderer\VertexArray.h" />
@@ -698,6 +699,7 @@
     <ClCompile Include="include\Renderer\Renderer.cpp" />
     <ClCompile Include="include\Renderer\Shader.cpp" />
     <ClCompile Include="include\Renderer\stb_image\stb_image.cpp" />
+    <ClCompile Include="include\Renderer\TerrainGenerator.cpp" />
     <ClCompile Include="include\Renderer\Texture.cpp" />
     <ClCompile Include="include\Renderer\Managers\TextureManager.cpp" />
     <ClCompile Include="include\Renderer\VertexArray.cpp" />
