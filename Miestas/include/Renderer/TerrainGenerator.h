@@ -12,14 +12,15 @@ namespace Miestas
 		{
 		private:
 			int m_randomSeed;
-			float m_terrainHeight;
 			
-			int m_terrainGridLength;
-			int m_terrainGridWidth;
+			unsigned int m_terrainSize;
 
 			float m_terrainScaleFactor; // how much to scale X and Z coordinates by
+			float m_terrainHeightScaleFactor;
 
-			std::vector<float> m_terrainData;
+			std::vector<float> m_terrainVertexData;
+			std::vector<unsigned int> m_terrainIndexData;
+
 			bool m_isInitialized = false;
 
 		public:
@@ -30,7 +31,9 @@ namespace Miestas
 
 			void generateTerrain();
 
-			const std::vector<float>& getTerrainData() const;
+			const std::vector<float>& getTerrainVertices() const;
+
+			const std::vector<unsigned int>& getTerrainIndices() const;
 		};
 	}
 }

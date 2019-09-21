@@ -537,6 +537,7 @@
   <ItemGroup>
     <None Include="configs\Config.json" />
     <None Include="configs\ModelConfig.json" />
+    <None Include="configs\PlayerConfig.json" />
     <None Include="configs\ShaderConfig.json" />
     <None Include="configs\TerrainConfig.json" />
     <None Include="include\Renderer\assimp\color4.inl" />
