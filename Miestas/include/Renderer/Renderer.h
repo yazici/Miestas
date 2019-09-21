@@ -37,6 +37,7 @@ namespace Miestas
 
 		public:
 			
+			void setDepthTesting(bool mode) const;
 
 			void setWireframeMode(bool mode);
 

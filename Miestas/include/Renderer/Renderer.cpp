@@ -6,6 +6,19 @@ namespace Miestas
 {
 	namespace Renderer
 	{
+		
+		void Renderer::setDepthTesting(bool mode) const
+		{
+			if (mode)
+			{
+				glEnable(GL_DEPTH_TEST);
+			}
+			else
+			{
+				glDisable(GL_DEPTH_TEST);
+			}
+		}
+
 		void Renderer::setWireframeMode(bool mode)
 		{
 			if (mode)
