@@ -30,7 +30,13 @@ namespace Miestas
 			configFile >> root;
 
 			m_terrainHeight = root["TERRAIN_HEIGHT_AMPLITUDE"];
+			m_terrainGridLength = root["TERRAIN_LENGTH"];
+			m_terrainGridWidth = root["TERRAIN_WIDTH"];
+
+			m_terrainScaleFactor = root["TERRAIN_SCALE_FACTOR"];
+
 			bool isRandomTerrain = root["TERRAIN_GEN_RANDOM"];
+
 
 			if (!isRandomTerrain)
 			{
