@@ -6,6 +6,10 @@
 #include "json/json.hpp"
 
 #include<fstream>
+#include<random>
+
+constexpr int RANDOM_MIN = 1;
+constexpr int RANDOM_MAX = 10000000;
 
 namespace Miestas
 {
@@ -15,7 +19,7 @@ namespace Miestas
 		{
 			using json = nlohmann::json;
 
-			std::ifstream configFile(configFilePath);
+			std::fstream configFile(configFilePath);
 
 			if (!configFile)
 			{
@@ -34,7 +38,17 @@ namespace Miestas
 			}
 			else
 			{
-				// TODO: Random seed generation
+				std::random_device device;
+				std::mt19937 randomgen(device());
+
+				std::uniform_int_distribution<std::mt19937::result_type> dist(RANDOM_MIN, RANDOM_MAX);
+
+				m_randomSeed = dist(randomgen);
+
+				root["TERRAIN_GEN_RANDOM"] = false;
+				root["TERRAIN_GEN_SEED"] = m_randomSeed;
+
+				configFile << root;
 			}
 
 			m_isInitialized = true;
@@ -46,6 +60,12 @@ namespace Miestas
 		{
 			if (!m_isInitialized)
 				return;
+
+			FastNoise noiseGenerator;
+			noiseGenerator.SetNoiseType(FastNoise::PerlinFractal);
+
+			
+
 
 			// GENERATE TERRAIN
 
