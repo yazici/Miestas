@@ -137,8 +137,8 @@ namespace Miestas
 				m_terrainVertexData[m_terrainIndexData[i] * 9 + 2] = v1.z;
 
 				m_terrainVertexData[m_terrainIndexData[i] * 9 + 3] = normal.x;
-				m_terrainVertexData[m_terrainIndexData[i] * 9 + 4] = normal.x;
-				m_terrainVertexData[m_terrainIndexData[i] * 9 + 5] = normal.x;
+				m_terrainVertexData[m_terrainIndexData[i] * 9 + 4] = normal.y;
+				m_terrainVertexData[m_terrainIndexData[i] * 9 + 5] = normal.z;
 
 				// Color it black for now
 				m_terrainVertexData[m_terrainIndexData[i] * 9 + 6] = 0.0f;
@@ -152,8 +152,8 @@ namespace Miestas
 				m_terrainVertexData[m_terrainIndexData[i+1] * 9 + 2] = v2.z;
 
 				m_terrainVertexData[m_terrainIndexData[i+1] * 9 + 3] = normal.x;
-				m_terrainVertexData[m_terrainIndexData[i+1] * 9 + 4] = normal.x;
-				m_terrainVertexData[m_terrainIndexData[i+1] * 9 + 5] = normal.x;
+				m_terrainVertexData[m_terrainIndexData[i+1] * 9 + 4] = normal.y;
+				m_terrainVertexData[m_terrainIndexData[i+1] * 9 + 5] = normal.z;
 
 				// Color it black for now
 				m_terrainVertexData[m_terrainIndexData[i+1] * 9 + 6] = 0.0f;
@@ -168,8 +168,8 @@ namespace Miestas
 				m_terrainVertexData[m_terrainIndexData[i+2] * 9 + 2] = v3.z;
 
 				m_terrainVertexData[m_terrainIndexData[i+2] * 9 + 3] = normal.x;
-				m_terrainVertexData[m_terrainIndexData[i+2] * 9 + 4] = normal.x;
-				m_terrainVertexData[m_terrainIndexData[i+2] * 9 + 5] = normal.x;
+				m_terrainVertexData[m_terrainIndexData[i+2] * 9 + 4] = normal.y;
+				m_terrainVertexData[m_terrainIndexData[i+2] * 9 + 5] = normal.z;
 
 				// Color it black for now
 				m_terrainVertexData[m_terrainIndexData[i+2] * 9 + 6] = 0.0f;
