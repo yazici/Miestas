@@ -80,7 +80,7 @@ namespace Miestas
 				return;
 
 			FastNoise noiseGenerator;
-			noiseGenerator.SetNoiseType(FastNoise::PerlinFractal);
+			noiseGenerator.SetNoiseType(FastNoise::Perlin);
 			noiseGenerator.SetSeed(m_randomSeed);
 
 			// Generate vertices
