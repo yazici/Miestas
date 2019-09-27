@@ -147,6 +147,8 @@
     <ClInclude Include="include\Core\Event\WindowEvents.h" />
     <ClInclude Include="include\Core\InputHandler.h" />
     <ClInclude Include="include\Core\KeyBindings.h" />
+    <ClInclude Include="include\Core\Memory\Allocator.h" />
+    <ClInclude Include="include\Core\Memory\PoolAllocator.h" />
     <ClInclude Include="include\Core\Timer.h" />
     <ClInclude Include="include\json\json.hpp" />
     <ClInclude Include="include\Logger\Logger.h" />

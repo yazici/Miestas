@@ -1,0 +1,14 @@
+{
+  {
+    "SHADER_NAME": "TriangleTest",
+    "SHADER_VERTEX_SOURCE": "../../shaders/TriangleTest.vs",
+    "SHADER_FRAGMENT_SOURCE": "../../shaders/TriangleTest.fs",
+    "SHADER_GEOMETRY_SOURCE": ""
+  },
+  {
+    "SHADER_NAME": "",
+    "SHADER_VERTEX_SOURCE": "",
+    "SHADER_FRAGMENT_SOURCE": "",
+    "SHADER_GEOMETRY_SOURCE":  ""
+  }
+}
