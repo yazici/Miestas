@@ -1,8 +1,8 @@
 #ifndef KEY_BINDINGS_H
 #define KEY_BINDINGS_H
 
-// We could just use MIESTAS key codes, but this is a good idea if I were to ever extend/change application in the future. 
-// The keycodes are the same as MIESTAS
+// We could just use GLFW key codes, but this is a good idea if I were to ever extend/change application in the future. 
+// The keycodes are the same as GLFW
 
 #define MIESTAS_KEY_UNKNOWN            -1
 

@@ -12,7 +12,7 @@ namespace Miestas
 	{
 		struct KeyPressedEvent : public Event
 		{
-			REGISTER_EVENT(KeyPressedEvent)
+			REGISTER_TYPE(KeyPressedEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			int m_keyPressed;
@@ -26,7 +26,7 @@ namespace Miestas
 
 		struct KeyReleasedEvent : public Event
 		{
-			REGISTER_EVENT(KeyReleasedEvent)
+			REGISTER_TYPE(KeyReleasedEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			int m_keyReleased;

@@ -89,9 +89,9 @@ namespace Miestas
 			// Set window close callback
 			glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
 			{
+				MIESTAS_LOG_INFO("Close event called.")
 				auto thisWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
-				
-				
+
 				thisWindow->emitEvent(std::move(std::make_shared<WindowCloseEvent>()));
 			});
 

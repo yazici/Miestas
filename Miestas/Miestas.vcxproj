@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -148,11 +148,14 @@
     <ClInclude Include="include\Core\InputHandler.h" />
     <ClInclude Include="include\Core\KeyBindings.h" />
     <ClInclude Include="include\Core\Memory\Allocator.h" />
+    <ClInclude Include="include\Core\Memory\LinearAllocator.h" />
     <ClInclude Include="include\Core\Memory\PoolAllocator.h" />
     <ClInclude Include="include\Core\Timer.h" />
+    <ClInclude Include="include\Game\GameManager.h" />
     <ClInclude Include="include\json\json.hpp" />
     <ClInclude Include="include\Logger\Logger.h" />
-    <ClInclude Include="include\Miestas\GameState.h" />
+    <ClInclude Include="include\Game\GameEvents.h" />
+    <ClInclude Include="include\Game\GameState.h" />
     <ClInclude Include="include\Renderer\assimp\ai_assert.h" />
     <ClInclude Include="include\Renderer\assimp\anim.h" />
     <ClInclude Include="include\Renderer\assimp\camera.h" />
@@ -539,7 +542,7 @@
   <ItemGroup>
     <None Include="configs\Config.json" />
     <None Include="configs\ModelConfig.json" />
-    <None Include="configs\PlayerConfig.json" />
+    <None Include="configs\GameConfig.json" />
     <None Include="configs\ShaderConfig.json" />
     <None Include="configs\TerrainConfig.json" />
     <None Include="include\Renderer\assimp\color4.inl" />
@@ -688,7 +691,9 @@
     <ClCompile Include="include\Core\Config.cpp" />
     <ClCompile Include="include\Core\Event\EventQueue.cpp" />
     <ClCompile Include="include\Core\InputHandler.cpp" />
+    <ClCompile Include="include\Core\Memory\LinearAllocator.cpp" />
     <ClCompile Include="include\Core\Timer.cpp" />
+    <ClCompile Include="include\Game\GameManager.cpp" />
     <ClCompile Include="include\glm\detail\glm.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />

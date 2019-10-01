@@ -11,7 +11,7 @@ namespace Miestas
 	{
 		struct WindowResizeEvent : public Event
 		{
-			REGISTER_EVENT(WindowResizeEvent)
+			REGISTER_TYPE(WindowResizeEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			unsigned int m_newWidth, m_newHeight;
@@ -24,7 +24,7 @@ namespace Miestas
 
 		struct WindowCloseEvent : public Event
 		{
-			REGISTER_EVENT(WindowCloseEvent)
+			REGISTER_TYPE(WindowCloseEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			WindowCloseEvent() {  }

@@ -11,7 +11,7 @@ namespace Miestas
 	{
 		struct MouseMovedEvent : public Event
 		{
-			REGISTER_EVENT(MouseMovedEvent)	
+			REGISTER_TYPE(MouseMovedEvent)	
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			float m_newX, m_newY;
@@ -25,7 +25,7 @@ namespace Miestas
 
 		struct MouseScrollEvent : public Event
 		{
-			REGISTER_EVENT(MouseScrollEvent)
+			REGISTER_TYPE(MouseScrollEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			float m_deltaX, m_deltaY;
@@ -39,7 +39,7 @@ namespace Miestas
 
 		struct MouseButtonPressedEvent : public Event
 		{
-			REGISTER_EVENT(MouseButtonPressedEvent)
+			REGISTER_TYPE(MouseButtonPressedEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			int m_buttonPressed;
@@ -53,7 +53,7 @@ namespace Miestas
 
 		struct MouseButtonReleasedEvent : public Event
 		{
-			REGISTER_EVENT(MouseButtonReleasedEvent)
+			REGISTER_TYPE(MouseButtonReleasedEvent)
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			int m_buttonReleased;
