@@ -25,9 +25,10 @@ namespace Miestas
 			// Application Events
 			WindowResizeEvent, WindowCloseEvent,
 			KeyPressedEvent, KeyReleasedEvent,
-			MouseMovedEvent, MouseScrollEvent, MouseButtonPressedEvent, MouseButtonReleasedEvent
+			MouseMovedEvent, MouseScrollEvent, MouseButtonPressedEvent, MouseButtonReleasedEvent,
 
-			
+			// Game Events
+			CameraMoveEvent, CameraRotateEvent
 		};
 
 		

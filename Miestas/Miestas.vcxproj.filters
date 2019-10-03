@@ -1209,13 +1209,19 @@
     <ClInclude Include="include\Core\Memory\LinearAllocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Game\GameEvents.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Game\GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Game\GameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\City\CityManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Events\GameEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Events\CameraEvents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1643,7 +1649,7 @@
     <None Include="configs\ShaderConfig.json" />
     <None Include="configs\ModelConfig.json" />
     <None Include="configs\TerrainConfig.json" />
-    <None Include="configs\GameConfig.json" />
+    <None Include="configs\CityConfig.json" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\glm\detail\glm.cpp">
@@ -1731,6 +1737,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Game\GameManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Game\City\CityManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

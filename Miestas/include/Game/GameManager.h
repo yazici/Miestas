@@ -3,44 +3,29 @@
 
 #include "Core/Event/Observable.h"
 #include "Core/Event/EventQueue.h"
+#include "City/CityManager.h"
 
 #include<string>
-#include<unordered_map>
+#include<memory>
 
 namespace Miestas
 {
 	namespace Game
 	{
 		using namespace Miestas::Core;
-		using UInt = unsigned int;
-
+		
 		class GameManager: public Observable
 		{
-		public:
-			
-			struct CityResources
-			{
-				UInt m_Wood;
-				UInt m_Diamond;
-				UInt m_Food;
-			};
-
+		
 		private:
 			
 			EventQueue* m_eventQueue;
 			bool m_isInitialized = false;
-			
-			std::string m_configFilePath;
-			// Game data
-			std::string m_cityName;
-			UInt m_cityMoney;
-			UInt m_cityPopulation;
-			UInt m_cityPopulationCapacity;
-			UInt m_cityHappiness;
-			CityResources m_cityResources;
+
+			std::unique_ptr<CityManager> m_cityManager;
 		
 		public:
-			void init(const std::string& gameConfigFile);
+			void init(const std::string& cityConfigFile);
 
 			virtual void onEvent(std::shared_ptr<Event>) override;
 

@@ -19,8 +19,8 @@ namespace Miestas
 			REGISTER_CATEGORY(GameEvent)
 			REGISTER_GAME_STATE(None)
 
-			GET_TYPE()
-			GET_CATEGORY()
+			GET_TYPE(override)
+			GET_CATEGORY(override)
 			GET_GAME_STATE()
 		};
 

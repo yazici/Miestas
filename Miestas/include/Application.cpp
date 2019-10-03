@@ -24,7 +24,7 @@ namespace Miestas
 	{
 		// Read Config from file
 		m_Config = std::make_unique<Config>();
-		m_Config->readFromFile("../Miestas/configs/Config.json");
+		m_Config->init("../Miestas/configs/Config.json");
 
 		// Initialize all the systems
 		m_Window = std::make_unique<Window>(m_Config->m_applicationName, m_Config->m_windowWidth, m_Config->m_windowHeight, m_Config->m_isFullScreen);
