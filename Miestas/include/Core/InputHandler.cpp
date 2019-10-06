@@ -23,14 +23,14 @@ namespace Miestas
 			case EventType::GameStateChangeEvent:
 			{
 				auto e = STATIC_PTR_CAST(GameStateChangeEvent, event)
-					handleGameStateChangeEvent(e);
+				handleGameStateChangeEvent(e);
 				break;
 			}
 
 			case EventType::MouseMovedEvent:
 
 				MIESTAS_LOG_INFO("Input Handler: Mouse Moved")
-					break;
+				break;
 
 			case EventType::MouseButtonPressedEvent:
 			{

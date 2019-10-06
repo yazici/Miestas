@@ -7,6 +7,7 @@
 #include "Core/Event/MouseEvents.h"
 #include "Core/KeyBindings.h"
 
+#include "stb_image/stb_image.h"
 
 namespace Miestas
 {
@@ -138,6 +139,20 @@ namespace Miestas
 					thisWindow->emitEvent(std::move(std::make_shared<KeyReleasedEvent>(key)));
 			});
 			
+
+			// Testing
+		/*	int width, height, channels;
+
+			unsigned char* pixels = stbi_load("C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\images\\cursor.png", &width, &height, &channels, 0);
+
+			GLFWimage cursorImage;
+			cursorImage.width = width;
+			cursorImage.height = height;
+			cursorImage.pixels = pixels;
+
+			GLFWcursor* cursor = glfwCreateCursor(&cursorImage, 0, 0);
+
+			glfwSetCursor(m_Window, cursor);*/
 
 			MIESTAS_LOG_INFO("Window: Successfully created and initialized window.")
 

@@ -4,12 +4,14 @@
 #include<vector>
 #include<memory>
 
-
 #include "Managers/TextureManager.h"
 #include "Managers/ShaderManager.h"
 #include "Renderer/OrthoCamera.h"
 #include "Core/Event/Event.h"
 #include "Core/Event/EventQueue.h"
+#include "Game/State/GameState.h"
+#include "Game/Events/StateEvents.h"
+
 /*
 The main Renderer class. The class will contain a reference to camera objects, as well as all model data
 
@@ -23,6 +25,8 @@ namespace Miestas
 	{
 
 		using namespace Miestas::Core;
+		using namespace Miestas::Game;
+
 		class Renderer: public Observable
 		{
 		private:
@@ -32,6 +36,9 @@ namespace Miestas
 			std::unique_ptr<OrthoCamera> m_orthoCamera;
 
 			glm::mat4 m_viewProjectionMatrix;
+
+			GameState m_gameState = GameState::None;
+
 
 			EventQueue* m_eventQueue;
 
@@ -54,6 +61,10 @@ namespace Miestas
 			virtual void setEventQueue(EventQueue* eq) override;
 
 			virtual void emitEvent(std::shared_ptr<Event> event) override;
+
+		private:
+
+			void handleGameStateChangeEvent(std::shared_ptr<GameStateChangeEvent> event);
 		};
 	}
 }

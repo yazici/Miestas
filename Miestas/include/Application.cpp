@@ -51,6 +51,7 @@ namespace Miestas
 
 		// Register Game State Change Event
 		m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_inputHandler.get());
+		m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_Renderer.get());
 
 		// Register Window Resize Event
 		m_appEventQueue->registerObservable(EventType::WindowResizeEvent, this); // Don't think we really need to send events from Window to Application, but I'll keep it just in case 
@@ -81,15 +82,15 @@ namespace Miestas
 
 	void Application::onEvent(std::shared_ptr<Event> event)
 	{
-		if (event->getType() == EventType::WindowCloseEvent)
+		switch (event->getType())
 		{
-			MIESTAS_LOG_INFO("Received a CloseEvent.")
+		case EventType::WindowCloseEvent:
 			m_isRunning = false;
-			//return;
-		}
-		else if (event->getType() == EventType::WindowResizeEvent)
-		{
-			// do nothing for now
+			break;
+
+		case EventType::WindowResizeEvent:
+			// Do nothing
+			break;
 		}
 	}
 

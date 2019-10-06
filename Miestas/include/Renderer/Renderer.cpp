@@ -1,5 +1,7 @@
 #include "Renderer.h"
 #include "Logger/Logger.h"
+#include "Game/Events/StateEvents.h"
+#include "Game/Events/CameraEvents.h"
 
 #include "glad/glad.h"
 
@@ -61,6 +63,15 @@ namespace Miestas
 		void Renderer::onEvent(std::shared_ptr<Event> event)
 		{
 			// Receives transformations from the game state and applies to objects (?)
+
+			switch (event->getType())
+			{
+			case EventType::GameStateChangeEvent:
+			{
+				auto e = STATIC_PTR_CAST(GameStateChangeEvent, event)
+				handleGameStateChangeEvent(e);
+			}
+			}
 		}
 
 		void Renderer::setEventQueue(EventQueue * eq)
@@ -73,6 +84,10 @@ namespace Miestas
 			m_eventQueue->addEventToQueue(std::move(event));
 		}
 
-
+		void Renderer::handleGameStateChangeEvent(std::shared_ptr<GameStateChangeEvent> event)
+		{
+			m_gameState = event->m_newGameState;
+			MIESTAS_LOG_INFO("Renderer: Received a GameStateChangedEvent.")
+		}
 	} 
 }
