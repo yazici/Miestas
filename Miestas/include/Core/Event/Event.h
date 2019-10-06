@@ -28,6 +28,7 @@ namespace Miestas
 			MouseMovedEvent, MouseScrollEvent, MouseButtonPressedEvent, MouseButtonReleasedEvent,
 
 			// Game Events
+			GameStateChangeEvent,
 			CameraMoveEvent, CameraRotateEvent
 		};
 

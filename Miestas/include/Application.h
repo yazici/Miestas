@@ -8,6 +8,9 @@
 #include "Core/Event/EventQueue.h"
 #include "Core/Event/Observable.h"
 #include "Core/InputHandler.h"
+#include "Game/State/StateManager.h"
+#include "Game/GameManager.h"
+
 #include<memory>
 
 namespace Miestas
@@ -15,6 +18,7 @@ namespace Miestas
 	using MiestasRenderer = Miestas::Renderer::Renderer; // to resolve ambiguity
 	using namespace Miestas::Renderer;
 	using namespace Miestas::Core;
+	using namespace Miestas::Game;
 
 	class Application: public Observable
 	{
@@ -26,6 +30,7 @@ namespace Miestas
 		std::unique_ptr<Window> m_Window;
 		std::unique_ptr<MiestasRenderer> m_Renderer;
 		std::unique_ptr<InputHandler> m_inputHandler;
+		std::unique_ptr<GameManager> m_gameManager;
 
 		std::unique_ptr<EventQueue> m_appEventQueue;
 

@@ -16,6 +16,7 @@ namespace Miestas
 				Left, 
 				Right
 			};
+
 			REGISTER_TYPE(CameraMoveEvent)
 			REGISTER_CATEGORY(GameEvent)
 			REGISTER_GAME_STATE(None)

@@ -11,5 +11,5 @@
   "SHADER_CONFIG": "ShaderConfig.json",
   "TERRAIN_CONFIG": "TerrainConfig.json",
   "CAMERA_CONFIG": "CameraConfig.json",
-  "CITY_CONFIG":  "CityConfig.json"
+  "CITY_CONFIG": "../Miestas/configs/CityConfig.json"
 }

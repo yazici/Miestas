@@ -2,7 +2,7 @@
 #define GAME_EVENTS_H
 
 #include "Core/Event/Event.h"
-#include "Game/GameState.h"
+#include "Game/State/GameState.h"
 
 #define REGISTER_GAME_STATE(e) GameState m_gameState = GameState::##e;
 #define GET_GAME_STATE(x) virtual GameState getGameState() const x { return m_gameState; }

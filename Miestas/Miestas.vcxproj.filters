@@ -1209,9 +1209,6 @@
     <ClInclude Include="include\Core\Memory\LinearAllocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Game\GameState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Game\GameManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1222,6 +1219,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Game\Events\CameraEvents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\State\GameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\State\StateManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Events\StateEvents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

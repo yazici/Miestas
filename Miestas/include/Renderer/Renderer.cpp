@@ -1,4 +1,5 @@
 #include "Renderer.h"
+#include "Logger/Logger.h"
 
 #include "glad/glad.h"
 
@@ -37,6 +38,8 @@ namespace Miestas
 			m_textureManager = std::make_unique<TextureManager>();
 			m_shaderManager = std::make_unique<ShaderManager>();
 			m_orthoCamera = std::make_unique<OrthoCamera>(-400.0f, 400.0f, 0.01f, 100.0f); // for now
+
+			MIESTAS_LOG_INFO("Renderer: Successfully initiliazed Renderer")
 		}
 
 		void Renderer::beginScene()

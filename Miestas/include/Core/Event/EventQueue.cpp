@@ -15,7 +15,7 @@ namespace Miestas
 
 		void EventQueue::addEventToQueue(std::shared_ptr<Event> event)
 		{
-			m_nextFrameEventList.push_back(event);
+			m_nextFrameEventList.push_back(std::move(event));
 		}
 
 

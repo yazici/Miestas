@@ -7,19 +7,12 @@
 namespace Miestas
 {
 	using namespace Miestas::Renderer;
-
+	
 	Application::~Application()
 	{
 		this->destroy();
 	}
 
-	/*The following systems need to be initialized 
-		- Window
-		- Renderer
-		- Input Handler
-		- Event Queue
-
-	*/    
 	void Application::init()
 	{
 		// Read Config from file
@@ -30,6 +23,7 @@ namespace Miestas
 		m_Window = std::make_unique<Window>(m_Config->m_applicationName, m_Config->m_windowWidth, m_Config->m_windowHeight, m_Config->m_isFullScreen);
 		m_Renderer = std::make_unique<MiestasRenderer>();
 		m_inputHandler = std::make_unique<InputHandler>();
+		m_gameManager = std::make_unique<GameManager>();
 
 
 		// Initialize m_eventQueue at the end after all the systems have been initialized
@@ -40,24 +34,31 @@ namespace Miestas
 		m_Window->init();
 		m_Renderer->init();
 		m_inputHandler->init();
+		m_gameManager->init(m_Config->m_cityConfig);
 
-		// EventType::None for now
-
+		
+		// Register None Type Event
 		m_appEventQueue->registerObservable(EventType::None, m_Window.get());
-
 		m_appEventQueue->registerObservable(EventType::None, m_Renderer.get());
+		m_appEventQueue->registerObservable(EventType::None, m_gameManager.get());
 
+		// Register Key Pressed Events
 		m_appEventQueue->registerObservable(EventType::KeyPressedEvent, m_inputHandler.get());
 		m_appEventQueue->registerObservable(EventType::KeyReleasedEvent, m_inputHandler.get());
-		//m_appEventQueue->registerObservable(EventType::MouseMovedEvent, m_inputHandler.get());
+		
+		// Register Mouse Pressed Events
 		m_appEventQueue->registerObservable(EventType::MouseButtonPressedEvent, m_inputHandler.get());
 
+		// Register Game State Change Event
+		m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_inputHandler.get());
 
-
+		// Register Window Resize Event
 		m_appEventQueue->registerObservable(EventType::WindowResizeEvent, this); // Don't think we really need to send events from Window to Application, but I'll keep it just in case 
+		
+		// Register Window Close Event
 		m_appEventQueue->registerObservable(EventType::WindowCloseEvent, this);
-
-
+		
+		m_gameManager->setGameState(GameState::MainMenu);
 	}
 
 
