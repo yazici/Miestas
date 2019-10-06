@@ -3,6 +3,7 @@
 #include "Core/Event/KeyboardEvents.h"
 #include "Core/Event/WindowEvents.h"
 #include "Game/Events/StateEvents.h"
+#include "Game/Events/CameraEvents.h"
 #include "Core/KeyBindings.h"
 
 namespace Miestas
@@ -22,25 +23,25 @@ namespace Miestas
 			case EventType::GameStateChangeEvent:
 			{
 				auto e = STATIC_PTR_CAST(GameStateChangeEvent, event)
-				handleGameStateChangeEvent(e);
+					handleGameStateChangeEvent(e);
 				break;
 			}
 
 			case EventType::MouseMovedEvent:
-				
+
 				MIESTAS_LOG_INFO("Input Handler: Mouse Moved")
-				break;
-			
+					break;
+
 			case EventType::MouseButtonPressedEvent:
 			{
 				auto e = STATIC_PTR_CAST(MouseButtonPressedEvent, event)
-				handleMouseButtonPressedEvent(e);
+					handleMouseButtonPressedEvent(e);
 				break;
 			}
 			case EventType::KeyPressedEvent:
-			
+
 				auto e = STATIC_PTR_CAST(KeyPressedEvent, event)
-				handleKeyPressedEvent(e);
+					handleKeyPressedEvent(e);
 				break;
 			}
 		}
@@ -63,22 +64,54 @@ namespace Miestas
 
 		void InputHandler::handleKeyPressedEvent(std::shared_ptr<KeyPressedEvent> event)
 		{
+			if (m_gameState != GameState::Playing)  // Keyboard is disable when not playing
+				return;
+
 			switch (event->m_keyPressed)
 			{
-				case MIESTAS_KEY_ESCAPE:
-				{
-					emitEvent(std::move(std::make_shared<WindowCloseEvent>()));
-					break;
-				}
-
-				// TODO
+			case MIESTAS_KEY_ESCAPE:
+			{
+				emitEvent(std::move(std::make_shared<WindowCloseEvent>()));
+				break;
 			}
 
+			case MIESTAS_KEY_A:
+			{
+				emitEvent(std::move(std::make_shared<CameraMoveEvent>(CameraMoveEvent::CameraMoveDirection::Left, 0.0f))); // Need to change 0.0f
+				break;
+			}
+
+			case MIESTAS_KEY_D:
+			{
+				emitEvent(std::move(std::make_shared<CameraMoveEvent>(CameraMoveEvent::CameraMoveDirection::Right, 0.0f))); // Need to change 0.0f
+				break;
+			}
+
+			case MIESTAS_KEY_W:
+			{
+				emitEvent(std::move(std::make_shared<CameraMoveEvent>(CameraMoveEvent::CameraMoveDirection::Forward, 0.0f))); // Need to change 0.0f
+				break;
+			}
+
+			case MIESTAS_KEY_S:
+			{
+				emitEvent(std::move(std::make_shared<CameraMoveEvent>(CameraMoveEvent::CameraMoveDirection::Backward, 0.0f))); // Need to change 0.0f
+				break;
+			}
+
+			case MIESTAS_KEY_TAB:
+			{
+				// TODO: Show city overview
+			}
+
+			}
 		}
+
 
 		void InputHandler::handleMouseButtonPressedEvent(std::shared_ptr<MouseButtonPressedEvent> event)
 		{
-			// TODO
+
 		}
 	}
 }
+

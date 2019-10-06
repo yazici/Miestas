@@ -69,8 +69,8 @@ namespace Miestas
 		while (m_isRunning)
 		{
 			m_appEventQueue->dispatchEvents();
-			m_Window->clearWindow(0.5f, 0.6f, 0.8f, 1.0f);
-			m_Window->updateWindow();
+			m_Window->clear(0.5f, 0.6f, 0.8f, 1.0f);
+			m_Window->update();
 			// Nothing for now
 		}
 	}

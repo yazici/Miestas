@@ -108,14 +108,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;$(SolutionDir)Miestas\include\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;$(SolutionDir)Miestas\include\Renderer;$(SolutionDir)Miestas\include\freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LOG_FRAME_TIME;DEBUG_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)Miestas\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,14 +126,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;$(SolutionDir)Miestas\include\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Miestas\include;$(SolutionDir)Miestas\include\Renderer;$(SolutionDir)Miestas\include\freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LOG_FRAME_TIME;DEBUG_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)Miestas\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -151,6 +151,56 @@
     <ClInclude Include="include\Core\Memory\LinearAllocator.h" />
     <ClInclude Include="include\Core\Memory\PoolAllocator.h" />
     <ClInclude Include="include\Core\Timer.h" />
+    <ClInclude Include="include\freetype\config\ftconfig.h" />
+    <ClInclude Include="include\freetype\config\ftheader.h" />
+    <ClInclude Include="include\freetype\config\ftmodule.h" />
+    <ClInclude Include="include\freetype\config\ftoption.h" />
+    <ClInclude Include="include\freetype\config\ftstdlib.h" />
+    <ClInclude Include="include\freetype\freetype.h" />
+    <ClInclude Include="include\freetype\ftadvanc.h" />
+    <ClInclude Include="include\freetype\ftbbox.h" />
+    <ClInclude Include="include\freetype\ftbdf.h" />
+    <ClInclude Include="include\freetype\ftbitmap.h" />
+    <ClInclude Include="include\freetype\ftbzip2.h" />
+    <ClInclude Include="include\freetype\ftcache.h" />
+    <ClInclude Include="include\freetype\ftchapters.h" />
+    <ClInclude Include="include\freetype\ftcid.h" />
+    <ClInclude Include="include\freetype\ftcolor.h" />
+    <ClInclude Include="include\freetype\ftdriver.h" />
+    <ClInclude Include="include\freetype\fterrdef.h" />
+    <ClInclude Include="include\freetype\fterrors.h" />
+    <ClInclude Include="include\freetype\ftfntfmt.h" />
+    <ClInclude Include="include\freetype\ftgasp.h" />
+    <ClInclude Include="include\freetype\ftglyph.h" />
+    <ClInclude Include="include\freetype\ftgxval.h" />
+    <ClInclude Include="include\freetype\ftgzip.h" />
+    <ClInclude Include="include\freetype\ftimage.h" />
+    <ClInclude Include="include\freetype\ftincrem.h" />
+    <ClInclude Include="include\freetype\ftlcdfil.h" />
+    <ClInclude Include="include\freetype\ftlist.h" />
+    <ClInclude Include="include\freetype\ftlzw.h" />
+    <ClInclude Include="include\freetype\ftmac.h" />
+    <ClInclude Include="include\freetype\ftmm.h" />
+    <ClInclude Include="include\freetype\ftmodapi.h" />
+    <ClInclude Include="include\freetype\ftmoderr.h" />
+    <ClInclude Include="include\freetype\ftotval.h" />
+    <ClInclude Include="include\freetype\ftoutln.h" />
+    <ClInclude Include="include\freetype\ftparams.h" />
+    <ClInclude Include="include\freetype\ftpfr.h" />
+    <ClInclude Include="include\freetype\ftrender.h" />
+    <ClInclude Include="include\freetype\ftsizes.h" />
+    <ClInclude Include="include\freetype\ftsnames.h" />
+    <ClInclude Include="include\freetype\ftstroke.h" />
+    <ClInclude Include="include\freetype\ftsynth.h" />
+    <ClInclude Include="include\freetype\ftsystem.h" />
+    <ClInclude Include="include\freetype\fttrigon.h" />
+    <ClInclude Include="include\freetype\fttypes.h" />
+    <ClInclude Include="include\freetype\ftwinfnt.h" />
+    <ClInclude Include="include\freetype\t1tables.h" />
+    <ClInclude Include="include\freetype\ttnameid.h" />
+    <ClInclude Include="include\freetype\tttables.h" />
+    <ClInclude Include="include\freetype\tttags.h" />
+    <ClInclude Include="include\ft2build.h" />
     <ClInclude Include="include\Game\City\CityManager.h" />
     <ClInclude Include="include\Game\Events\CameraEvents.h" />
     <ClInclude Include="include\Game\Events\StateEvents.h" />
@@ -538,6 +588,8 @@
     <ClInclude Include="include\Renderer\TerrainGenerator.h" />
     <ClInclude Include="include\Renderer\Texture.h" />
     <ClInclude Include="include\Renderer\Managers\TextureManager.h" />
+    <ClInclude Include="include\Renderer\Text\Character.h" />
+    <ClInclude Include="include\Renderer\Text\Font.h" />
     <ClInclude Include="include\Renderer\VertexArray.h" />
     <ClInclude Include="include\Renderer\VertexBuffer.h" />
     <ClInclude Include="include\Core\Window.h" />
@@ -715,6 +767,7 @@
     <ClCompile Include="include\Renderer\TerrainGenerator.cpp" />
     <ClCompile Include="include\Renderer\Texture.cpp" />
     <ClCompile Include="include\Renderer\Managers\TextureManager.cpp" />
+    <ClCompile Include="include\Renderer\Text\Font.cpp" />
     <ClCompile Include="include\Renderer\VertexArray.cpp" />
     <ClCompile Include="include\Renderer\VertexBuffer.cpp" />
     <ClCompile Include="include\Core\Window.cpp" />
@@ -722,6 +775,9 @@
     <ClCompile Include="include\Application.cpp" />
     <ClCompile Include="miestas\glad.c" />
     <ClCompile Include="miestas\Miestas.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\TitleFont.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

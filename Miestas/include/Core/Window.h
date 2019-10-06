@@ -39,9 +39,9 @@ namespace Miestas
 
 			void init();
 
-			void clearWindow(float r, float g, float b, float a = 1.0f);
+			void clear(float r, float g, float b, float a = 1.0f);
 
-			void updateWindow();
+			void update();
 
 			bool shouldClose() const;
 

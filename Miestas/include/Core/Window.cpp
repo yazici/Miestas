@@ -25,7 +25,7 @@ namespace Miestas
 
 			glfwSwapInterval(1);
 			m_vSyncEnabled = true;
-			MIESTAS_LOG_INFO("VSync Enabled")
+			MIESTAS_LOG_INFO("Window: VSync Enabled")
 		}
 
 		void Window::disableVSync()
@@ -35,14 +35,14 @@ namespace Miestas
 
 			glfwSwapInterval(0);
 			m_vSyncEnabled = false;
-			MIESTAS_LOG_INFO("VSync Disabled")
+			MIESTAS_LOG_INFO("Window: VSync Disabled")
 		}
 
 		void Window::init()
 		{
 			if (!glfwInit())
 			{
-				MIESTAS_FAILURE("Failed to initialize GLFW.")
+				MIESTAS_FAILURE("Window: Failed to initialize GLFW.")
 			}
 
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -63,7 +63,7 @@ namespace Miestas
 
 			if (!m_Window)
 			{
-				MIESTAS_FAILURE("Failed to create window.")
+				MIESTAS_FAILURE("Window: Failed to create window.")
 			}
 			
 			glfwMakeContextCurrent(m_Window);
@@ -71,7 +71,7 @@ namespace Miestas
 
 			if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 			{
-				MIESTAS_FAILURE("Failed to initialize GLAD")
+				MIESTAS_FAILURE("Window: Failed to initialize GLAD")
 			}
 			
 			// Need to do this, since lambdas with captures cannot be converted into function pointers
@@ -139,17 +139,17 @@ namespace Miestas
 			});
 			
 
-			MIESTAS_LOG_INFO("Successfully created and initialized window.")
+			MIESTAS_LOG_INFO("Window: Successfully created and initialized window.")
 
 		}
 
-		void Window::clearWindow(float r, float g, float b, float a)
+		void Window::clear(float r, float g, float b, float a)
 		{
 			glClearColor(r, g, b, a);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
-		void Window::updateWindow()
+		void Window::update()
 		{
 			glfwSwapBuffers(m_Window);
 			glfwPollEvents();
