@@ -61,7 +61,7 @@ namespace Miestas
 			json root;
 
 			root["CITY_NAME"] = m_cityName;
-			root["CITY_MONEY"] = m_cityMoney;
+			root["CITY_MONEY"] = m_cityResources.m_Money;
 			root["CITY_POPULATION"] = m_cityPopulation;
 			root["CITY_POPULATION_CAPACITY"] = m_cityPopulationCapacity;
 			root["CITY_HAPPINESS"] = m_cityHappiness;

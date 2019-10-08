@@ -29,7 +29,16 @@ namespace Miestas
 				return m_Name == tech.m_Name;
 			}
 		};
+
+		struct TechnologyHasher
+		{
+			std::size_t operator()(const Technology& tech) const
+			{
+				return (std::hash<std::string>()(tech.m_Name));
+			}
+		};
 	}
 }
+
 
 #endif

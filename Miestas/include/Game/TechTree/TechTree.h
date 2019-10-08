@@ -13,7 +13,7 @@ namespace Miestas
 		class TechTree
 		{
 		private:
-			std::unordered_map<Technology, std::vector<Technology>> m_techTree; // stores the dependencies of each technology
+			std::unordered_map<Technology, std::vector<Technology>, TechnologyHasher> m_techTree; // stores the dependencies of each technology
 		
 		public:
 
