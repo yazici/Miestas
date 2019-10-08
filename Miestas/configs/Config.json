@@ -7,9 +7,10 @@
   "WINDOW_HEIGHT": 600,
   "WINDOW_FULLSCREEN": false,
 
-  "MODEL_CONFIG": "ModelConfig.json",
-  "SHADER_CONFIG": "ShaderConfig.json",
-  "TERRAIN_CONFIG": "TerrainConfig.json",
-  "CAMERA_CONFIG": "CameraConfig.json",
-  "CITY_CONFIG": "../Miestas/configs/CityConfig.json"
+  "MODEL_CONFIG": "../Miestas/configs/ModelConfig.json",
+  "SHADER_CONFIG": "../Miestas/configs/ShaderConfig.json",
+  "TERRAIN_CONFIG": "../Miestas/configs/TerrainConfig.json",
+  "CAMERA_CONFIG": "../Miestas/configs/CameraConfig.json",
+  "CITY_CONFIG": "../Miestas/configs/CityConfig.json",
+  "TECH_TREE_CONFIG": "../Miestas/configs/TechTreeConfig.json"
 }

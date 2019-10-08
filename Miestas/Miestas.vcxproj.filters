@@ -1386,6 +1386,15 @@
     <ClInclude Include="include\Renderer\Text\Font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Game\TechTree\Technology.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Resource\Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\TechTree\TechTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\glm\detail\func_common.inl">
@@ -1812,6 +1821,7 @@
     <None Include="configs\ModelConfig.json" />
     <None Include="configs\TerrainConfig.json" />
     <None Include="configs\CityConfig.json" />
+    <None Include="configs\TechTreeConfig.json" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\glm\detail\glm.cpp">
@@ -1905,6 +1915,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Renderer\Text\Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Game\TechTree\TechTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -27,6 +27,7 @@ namespace Miestas
 			std::string m_terrainConfig; // Path to JSON file containing procedural terrain info
 			std::string m_cameraConfig; // Path to JSON file containing camera info
 			std::string m_cityConfig;
+			std::string m_techTreeConfig;
 
 
 			// Reads config data from JSON

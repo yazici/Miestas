@@ -35,6 +35,7 @@ namespace Miestas
 			m_terrainConfig = root["TERRAIN_CONFIG"];
 			m_cameraConfig = root["CAMERA_CONFIG"];
 			m_cityConfig = root["CITY_CONFIG"];
+			m_techTreeConfig = root["TECH_TREE_CONFIG"];
 
 			MIESTAS_LOG_INFO("Succesfully loaded Config file: {0} ", filePath)
 			MIESTAS_LOG_INFO("Major Version: {0}", m_majorVersion)

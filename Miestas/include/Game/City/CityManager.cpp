@@ -29,14 +29,15 @@ namespace Miestas
 			configFile >> root;
 
 			m_cityName = root["CITY_NAME"];
-			m_cityMoney = root["CITY_MONEY"];
+			
 			m_cityPopulation = root["CITY_POPULATION"];
 			m_cityPopulationCapacity = root["CITY_POPULATION_CAPACITY"];
 			m_cityHappiness = root["CITY_HAPPINESS"];
 			m_cityResources.m_Wood = root["CITY_RESOURCE_WOOD"];
 			m_cityResources.m_Diamond = root["CITY_RESOURCE_DIAMOND"];
 			m_cityResources.m_Food = root["CITY_RESOURCE_FOOD"];
-
+			m_cityResources.m_Money = root["CITY_MONEY"];
+			
 			m_isInitialized = true;
 
 			MIESTAS_LOG_INFO("Game Manager: Successfully initialized from file {0}", configFilePath);

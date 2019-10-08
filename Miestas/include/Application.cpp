@@ -71,6 +71,7 @@ namespace Miestas
 		{
 			m_appEventQueue->dispatchEvents();
 			m_Window->clear(0.5f, 0.6f, 0.8f, 1.0f);
+			// m_Renderer->render();
 			m_Window->update();
 			// Nothing for now
 		}
@@ -90,6 +91,9 @@ namespace Miestas
 
 		case EventType::WindowResizeEvent:
 			// Do nothing
+			break;
+
+		default:
 			break;
 		}
 	}

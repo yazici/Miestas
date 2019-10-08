@@ -205,7 +205,10 @@
     <ClInclude Include="include\Game\Events\CameraEvents.h" />
     <ClInclude Include="include\Game\Events\StateEvents.h" />
     <ClInclude Include="include\Game\GameManager.h" />
+    <ClInclude Include="include\Game\Resource\Resource.h" />
     <ClInclude Include="include\Game\State\StateManager.h" />
+    <ClInclude Include="include\Game\TechTree\Technology.h" />
+    <ClInclude Include="include\Game\TechTree\TechTree.h" />
     <ClInclude Include="include\json\json.hpp" />
     <ClInclude Include="include\Logger\Logger.h" />
     <ClInclude Include="include\Game\Events\GameEvent.h" />
@@ -600,6 +603,7 @@
     <None Include="configs\ModelConfig.json" />
     <None Include="configs\CityConfig.json" />
     <None Include="configs\ShaderConfig.json" />
+    <None Include="configs\TechTreeConfig.json" />
     <None Include="configs\TerrainConfig.json" />
     <None Include="include\Renderer\assimp\color4.inl" />
     <None Include="include\Renderer\assimp\material.inl" />
@@ -751,6 +755,7 @@
     <ClCompile Include="include\Core\Timer.cpp" />
     <ClCompile Include="include\Game\City\CityManager.cpp" />
     <ClCompile Include="include\Game\GameManager.cpp" />
+    <ClCompile Include="include\Game\TechTree\TechTree.cpp" />
     <ClCompile Include="include\glm\detail\glm.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
