@@ -583,6 +583,7 @@
     <ClInclude Include="include\Logger\spdlog\spdlog.h" />
     <ClInclude Include="include\Logger\spdlog\tweakme.h" />
     <ClInclude Include="include\Logger\spdlog\version.h" />
+    <ClInclude Include="include\Renderer\Light.h" />
     <ClInclude Include="include\Renderer\Managers\ShaderManager.h" />
     <ClInclude Include="include\Renderer\OrthoCamera.h" />
     <ClInclude Include="include\Renderer\Renderer.h" />

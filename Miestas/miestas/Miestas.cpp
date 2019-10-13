@@ -2,10 +2,9 @@
 
 #include "Application.h"
 
-#include "stb_image/stb_image.h"
-
 using namespace Miestas;
 using namespace Miestas::Core;
+using namespace Miestas::Game;
 
 int main()
 {
