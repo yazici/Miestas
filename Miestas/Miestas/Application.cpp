@@ -39,7 +39,7 @@ namespace Miestas
 		m_gameManager->init(m_Config->m_cityConfig);
 
 		// Remove later
-		m_soundLibrary->addSongToLibrary("hope", "C:\\Users\\rdpsi\\Downloads\\Hope.ogg");
+		m_soundLibrary->addSongToLibrary("MainMenu", "../Miestas/Resources/Sounds/MainMenu.wav");
 		
 		// Register None Type Event
 		m_appEventQueue->registerObservable(EventType::None, m_Window.get());
@@ -67,7 +67,7 @@ namespace Miestas
 		m_appEventQueue->registerObservable(EventType::PlaySoundEvent, m_soundLibrary.get());
 		
 		m_gameManager->setGameState(GameState::MainMenu);
-		emitEvent(std::move(std::make_shared<PlaySoundEvent>("hope")));
+		emitEvent(std::move(std::make_shared<PlaySoundEvent>("MainMenu")));
 	}
 
 

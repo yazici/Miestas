@@ -23,11 +23,9 @@ namespace Miestas
 
 		public:
 
-			~SoundLibrary() = default;
+			~SoundLibrary();
 
 			void init();
-
-			void playSound(const std::string& sound);
 
 			void addSongToLibrary(const std::string& soundName, const std::string& soundFile);
 
@@ -38,6 +36,10 @@ namespace Miestas
 			void setEventQueue(EventQueue* eq);
 
 			void emitEvent(std::shared_ptr<Event> event);
+
+		private:
+
+			void playSound(const std::string& sound, bool looped = false);
 
 		};
 	}

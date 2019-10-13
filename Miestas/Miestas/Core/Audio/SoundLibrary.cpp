@@ -3,13 +3,23 @@
 #include "Core/Event/EventQueue.h"
 #include "Core/Event/AudioEvents.h"
 
+#include "json/json.hpp"
+
+#include<fstream>
+
 #define STRING_TO_LOWER(x) std::transform(x.##begin(), x.##end(), x.##begin(), [](unsigned char ch){ return std::tolower(ch); });
 
 namespace Miestas
 {
 	namespace Core
 	{
+
+		SoundLibrary::~SoundLibrary()
+		{
+			destroy();
+		}
 		
+		// TODO: Read from config file
 		void SoundLibrary::init()
 		{
 			m_Engine = irrklang::createIrrKlangDevice();
@@ -19,10 +29,12 @@ namespace Miestas
 				MIESTAS_FAILURE("SoundLibrary: Unable to initialize SoundEngine.")
 			}
 
+			
+
 			MIESTAS_LOG_INFO("SoundLibrary: Successfully initialized.")
 		}
 
-		void SoundLibrary::playSound(const std::string & sound)
+		void SoundLibrary::playSound(const std::string & sound, bool looped)
 		{
 			STRING_TO_LOWER(const_cast<std::string&>(sound))
 
@@ -33,7 +45,7 @@ namespace Miestas
 				return;
 			}
 
-			m_Engine->play2D(soundFile->second.c_str());
+			m_Engine->play2D(soundFile->second.c_str(), looped);
 
 		}
 
@@ -55,7 +67,7 @@ namespace Miestas
 
 			auto e = STATIC_PTR_CAST(PlaySoundEvent, event)
 
-			playSound(e->m_soundToPlay);
+			playSound(e->m_soundToPlay, e->m_Looped);
 		}
 
 		void SoundLibrary::setEventQueue(EventQueue * eq)

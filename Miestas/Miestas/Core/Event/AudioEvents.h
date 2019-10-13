@@ -15,11 +15,12 @@ namespace Miestas
 			REGISTER_CATEGORY(ApplicationEvent)
 
 			std::string m_soundToPlay;
+			bool m_Looped;
 
-			PlaySoundEvent(const std::string& soundToPlay) : m_soundToPlay(soundToPlay)
+			PlaySoundEvent(const std::string& soundToPlay, bool looped = false) : m_soundToPlay(soundToPlay), m_Looped(looped)
 			{}
 
-			PlaySoundEvent(const std::string&& soundToPlay) : m_soundToPlay(std::move(soundToPlay))
+			PlaySoundEvent(const std::string&& soundToPlay, bool looped = false) : m_soundToPlay(std::move(soundToPlay)), m_Looped(looped)
 			{}
 
 			GET_TYPE(override)
