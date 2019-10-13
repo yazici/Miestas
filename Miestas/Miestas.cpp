@@ -1,6 +1,8 @@
 #include<memory>
+#include<iostream>
 
 #include "Application.h"
+
 
 using namespace Miestas;
 using namespace Miestas::Core;
@@ -13,5 +15,5 @@ int main()
 
 	m_Application->run();
 	
-	//std::cin.get();
+	// std::cin.get();
 }

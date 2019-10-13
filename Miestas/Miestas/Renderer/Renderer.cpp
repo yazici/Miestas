@@ -69,9 +69,11 @@ namespace Miestas
 			case EventType::GameStateChangeEvent:
 			{
 				auto e = STATIC_PTR_CAST(GameStateChangeEvent, event)
-				handleGameStateChangeEvent(e);
+					handleGameStateChangeEvent(e);
+				break;
 			}
 			}
+
 		}
 
 		void Renderer::setEventQueue(EventQueue * eq)

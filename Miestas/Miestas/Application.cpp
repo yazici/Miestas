@@ -1,7 +1,7 @@
 #include "Application.h"
 #include "Logger/Logger.h"
 
-
+#include "Core/Event/AudioEvents.h"
 #include "Core/Event/KeyboardEvents.h"
 
 namespace Miestas
@@ -17,13 +17,14 @@ namespace Miestas
 	{
 		// Read Config from file
 		m_Config = std::make_unique<Config>();
-		m_Config->init("../Miestas/configs/Config.json");
+		m_Config->init("../Miestas/Resources/Configs/Config.json");
 
 		// Initialize all the systems
 		m_Window = std::make_unique<Window>(m_Config->m_applicationName, m_Config->m_windowWidth, m_Config->m_windowHeight, m_Config->m_isFullScreen);
 		m_Renderer = std::make_unique<MiestasRenderer>();
 		m_inputHandler = std::make_unique<InputHandler>();
 		m_gameManager = std::make_unique<GameManager>();
+		m_soundLibrary = std::make_unique<SoundLibrary>();
 
 
 		// Initialize m_eventQueue at the end after all the systems have been initialized
@@ -34,8 +35,11 @@ namespace Miestas
 		m_Window->init();
 		m_Renderer->init();
 		m_inputHandler->init();
+		m_soundLibrary->init();
 		m_gameManager->init(m_Config->m_cityConfig);
 
+		// Remove later
+		m_soundLibrary->addSongToLibrary("hope", "C:\\Users\\rdpsi\\Downloads\\Hope.ogg");
 		
 		// Register None Type Event
 		m_appEventQueue->registerObservable(EventType::None, m_Window.get());
@@ -58,8 +62,12 @@ namespace Miestas
 		
 		// Register Window Close Event
 		m_appEventQueue->registerObservable(EventType::WindowCloseEvent, this);
+
+		// Register Sound Event
+		m_appEventQueue->registerObservable(EventType::PlaySoundEvent, m_soundLibrary.get());
 		
 		m_gameManager->setGameState(GameState::MainMenu);
+		emitEvent(std::move(std::make_shared<PlaySoundEvent>("hope")));
 	}
 
 
