@@ -141,9 +141,14 @@ namespace Miestas
 			
 
 			// Testing
-		/*	int width, height, channels;
+			int width, height, channels;
 
-			unsigned char* pixels = stbi_load("C:\\Users\\rdpsi\\Desktop\\Miestas\\Miestas\\images\\cursor.png", &width, &height, &channels, 0);
+			unsigned char* pixels = stbi_load("../Miestas/Resources/Images/Cursor.png", &width, &height, &channels, 0);
+
+			if (!pixels)
+			{
+				MIESTAS_LOG_ERROR("Window: Unable to load Cursor.")
+			}
 
 			GLFWimage cursorImage;
 			cursorImage.width = width;
@@ -152,7 +157,7 @@ namespace Miestas
 
 			GLFWcursor* cursor = glfwCreateCursor(&cursorImage, 0, 0);
 
-			glfwSetCursor(m_Window, cursor);*/
+			glfwSetCursor(m_Window, cursor);
 
 			MIESTAS_LOG_INFO("Window: Successfully created and initialized window.")
 

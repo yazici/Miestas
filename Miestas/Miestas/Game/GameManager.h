@@ -4,7 +4,7 @@
 #include "Core/Event/Observable.h"
 #include "Core/Event/EventQueue.h"
 #include "City/CityManager.h"
-#include "Game/State/StateManager.h"
+#include "Game/State/GameState.h"
 
 #include<string>
 #include<memory>
@@ -24,7 +24,10 @@ namespace Miestas
 			bool m_isInitialized = false;
 
 			std::unique_ptr<CityManager> m_cityManager;
-			std::unique_ptr<StateManager> m_stateManager;
+			
+			GameState m_gameState = GameState::None;
+
+
 		
 		public:
 			void init(const std::string& cityConfigFile);

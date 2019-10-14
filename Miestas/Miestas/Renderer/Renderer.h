@@ -46,13 +46,15 @@ namespace Miestas
 			
 			void setDepthTesting(bool mode) const;
 
-			void setWireframeMode(bool mode);
+			void setWireframeMode(bool mode) const;
 
 			void init();
 
 			void beginScene();
 
 			void renderScene() const;
+
+			void render() const;
 
 			void endScene();
 
@@ -63,6 +65,8 @@ namespace Miestas
 			virtual void emitEvent(std::shared_ptr<Event> event) override;
 
 		private:
+
+			void renderMainMenuScene() const;
 
 			void handleGameStateChangeEvent(std::shared_ptr<GameStateChangeEvent> event);
 		};

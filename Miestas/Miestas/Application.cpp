@@ -54,6 +54,7 @@ namespace Miestas
 		m_appEventQueue->registerObservable(EventType::MouseButtonPressedEvent, m_inputHandler.get());
 
 		// Register Game State Change Event
+		//m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_gameManager.get());
 		m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_inputHandler.get());
 		m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_Renderer.get());
 
@@ -63,11 +64,14 @@ namespace Miestas
 		// Register Window Close Event
 		m_appEventQueue->registerObservable(EventType::WindowCloseEvent, this);
 
-		// Register Sound Event
+		// Register Sound Play Event
 		m_appEventQueue->registerObservable(EventType::PlaySoundEvent, m_soundLibrary.get());
+
+		// Register Sound Stop Event
+		m_appEventQueue->registerObservable(EventType::StopSoundEvent, m_soundLibrary.get());
 		
 		m_gameManager->setGameState(GameState::MainMenu);
-		emitEvent(std::move(std::make_shared<PlaySoundEvent>("MainMenu")));
+		//emitEvent(std::move(std::make_shared<PlaySoundEvent>("MainMenu", true)));
 	}
 
 
@@ -79,8 +83,9 @@ namespace Miestas
 		{
 			m_appEventQueue->dispatchEvents();
 			m_Window->clear(0.5f, 0.6f, 0.8f, 1.0f);
-			// m_Renderer->render();
+			m_Renderer->render();
 			m_Window->update();
+		
 			// Nothing for now
 		}
 	}

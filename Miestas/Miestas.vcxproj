@@ -211,7 +211,6 @@
     <ClInclude Include="Miestas\Game\GameManager.h" />
     <ClInclude Include="Miestas\Game\Resource\Resource.h" />
     <ClInclude Include="Miestas\Game\State\GameState.h" />
-    <ClInclude Include="Miestas\Game\State\StateManager.h" />
     <ClInclude Include="Miestas\Game\TechTree\Technology.h" />
     <ClInclude Include="Miestas\Game\TechTree\TechTree.h" />
     <ClInclude Include="Miestas\glm\common.hpp" />
@@ -768,6 +767,8 @@
     <None Include="Resources\Configs\ShaderConfig.json" />
     <None Include="Resources\Configs\TechTreeConfig.json" />
     <None Include="Resources\Configs\TerrainConfig.json" />
+    <None Include="Resources\Shaders\MainMenu.fs" />
+    <None Include="Resources\Shaders\MainMenu.vs" />
     <None Include="Resources\Shaders\TriangleTest.fs" />
     <None Include="Resources\Shaders\TriangleTest.vs" />
     <None Include="shaders\TriangleTest.fs" />

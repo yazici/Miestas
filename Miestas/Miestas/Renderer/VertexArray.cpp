@@ -45,7 +45,7 @@ namespace Miestas
 				pointerOffset += layout.m_Size * typeSize;
 			}
 
-			MIESTAS_LOG_INFO("Succesfully binded the vertex buffer to vertex array.")
+			//MIESTAS_LOG_INFO("Succesfully binded the vertex buffer to vertex array.")
 
 		}
 
@@ -56,7 +56,7 @@ namespace Miestas
 			m_indexBuffer->bind();
 			glBindVertexArray(0);
 
-			MIESTAS_LOG_INFO("Successfully binded the index buffer to vertex array.")
+			//MIESTAS_LOG_INFO("Successfully binded the index buffer to vertex array.")
 		}
 
 		void VertexArray::bind() const

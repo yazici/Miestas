@@ -27,6 +27,18 @@ namespace Miestas
 			GET_CATEGORY(override)
 
 		};
+
+		struct StopSoundEvent : public Event
+		{
+			REGISTER_TYPE(StopSoundEvent)
+			REGISTER_CATEGORY(ApplicationEvent)
+
+			StopSoundEvent() = default;
+
+			GET_TYPE(override)
+			GET_CATEGORY(override)
+
+		};
 	}
 }
 

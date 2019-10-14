@@ -9,7 +9,6 @@
 #include "Core/Event/Observable.h"
 #include "Core/InputHandler.h"
 #include "Core/Audio/SoundLibrary.h"
-#include "Game/State/StateManager.h"
 #include "Game/GameManager.h"
 
 #include<memory>

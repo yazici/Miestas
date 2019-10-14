@@ -4,6 +4,7 @@
 #include "Core/Event/WindowEvents.h"
 #include "Game/Events/StateEvents.h"
 #include "Game/Events/CameraEvents.h"
+#include "Core/Event/AudioEvents.h"
 #include "Core/KeyBindings.h"
 
 namespace Miestas
@@ -35,7 +36,7 @@ namespace Miestas
 			case EventType::MouseButtonPressedEvent:
 			{
 				auto e = STATIC_PTR_CAST(MouseButtonPressedEvent, event)
-					handleMouseButtonPressedEvent(e);
+				handleMouseButtonPressedEvent(e);
 				break;
 			}
 			case EventType::KeyPressedEvent:
@@ -71,7 +72,8 @@ namespace Miestas
 			{
 			case MIESTAS_KEY_ESCAPE:
 			{
-				emitEvent(std::move(std::make_shared<WindowCloseEvent>()));
+				emitEvent(std::move(std::make_shared<GameStateChangeEvent>(GameState::MainMenu)));
+				emitEvent(std::move(std::make_shared<PlaySoundEvent>("MainMenu", true)));
 				break;
 			}
 
@@ -110,7 +112,8 @@ namespace Miestas
 
 		void InputHandler::handleMouseButtonPressedEvent(std::shared_ptr<MouseButtonPressedEvent> event)
 		{
-
+			emitEvent(std::move(std::make_shared<GameStateChangeEvent>(GameState::Playing)));
+			emitEvent(std::move(std::make_shared<StopSoundEvent>()));
 		}
 	}
 }

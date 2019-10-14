@@ -14,6 +14,8 @@ namespace Miestas
 
 		void Texture::addTexture(const std::string& texturePath, aiTextureType textureType)
 		{
+			stbi_set_flip_vertically_on_load(1);
+
 			m_textureType = textureType;
 
 			glGenTextures(1, &m_textureId);

@@ -26,7 +26,7 @@ namespace Miestas
 			WindowResizeEvent, WindowCloseEvent,
 			KeyPressedEvent, KeyReleasedEvent,
 			MouseMovedEvent, MouseScrollEvent, MouseButtonPressedEvent, MouseButtonReleasedEvent,
-			PlaySoundEvent,
+			PlaySoundEvent, StopSoundEvent,
 
 			// Game Events
 			GameStateChangeEvent,

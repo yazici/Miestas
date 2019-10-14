@@ -41,6 +41,8 @@ namespace Miestas
 
 			void playSound(const std::string& sound, bool looped = false);
 
+			void stopSound();
+
 		};
 	}
 }

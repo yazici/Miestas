@@ -49,6 +49,11 @@ namespace Miestas
 
 		}
 
+		void SoundLibrary::stopSound()
+		{
+			m_Engine->stopAllSounds();
+		}
+
 		void SoundLibrary::addSongToLibrary(const std::string & soundName, const std::string & soundFile)
 		{
 			STRING_TO_LOWER(const_cast<std::string&>(soundName))
@@ -62,12 +67,20 @@ namespace Miestas
 
 		void SoundLibrary::onEvent(std::shared_ptr<Event> event)
 		{
-			if (event->getType() != EventType::PlaySoundEvent)
-				return;
-
-			auto e = STATIC_PTR_CAST(PlaySoundEvent, event)
-
-			playSound(e->m_soundToPlay, e->m_Looped);
+			switch (event->getType())
+			{
+			case EventType::PlaySoundEvent:
+			{
+				auto e = STATIC_PTR_CAST(PlaySoundEvent, event)
+				playSound(e->m_soundToPlay, e->m_Looped);
+				break;
+			}
+			case EventType::StopSoundEvent:
+			{
+				stopSound();
+				break;
+			}
+			}
 		}
 
 		void SoundLibrary::setEventQueue(EventQueue * eq)
