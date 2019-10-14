@@ -39,6 +39,12 @@ namespace Miestas
 			glDrawElements(GL_TRIANGLES, m_bufferData.size(), GL_UNSIGNED_INT, 0);
 		}
 
+
+		unsigned int IndexBuffer::getNumIndices() const
+		{
+			return m_bufferData.size();
+		}
+
 		
 
 

@@ -35,6 +35,8 @@ namespace Miestas
 
 			void render() const;
 
+			unsigned int getNumIndices() const;
+
 		};
 	}
 }

@@ -76,6 +76,11 @@ namespace Miestas
 			m_indexBuffer->render();
 		}
 
+		unsigned int VertexArray::getNumIndices() const
+		{
+			return m_indexBuffer->getNumIndices();
+		}
+
 
 	}
 }

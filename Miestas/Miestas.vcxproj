@@ -611,6 +611,8 @@
     <ClInclude Include="Miestas\Renderer\Managers\TextureManager.h" />
     <ClInclude Include="Miestas\Renderer\OrthoCamera.h" />
     <ClInclude Include="Miestas\Renderer\Renderer.h" />
+    <ClInclude Include="Miestas\Renderer\Scene.h" />
+    <ClInclude Include="Miestas\Renderer\SceneObject.h" />
     <ClInclude Include="Miestas\Renderer\Shader.h" />
     <ClInclude Include="Miestas\Renderer\stb_image\stb_image.h" />
     <ClInclude Include="Miestas\Renderer\TerrainGenerator.h" />
@@ -800,6 +802,7 @@
     <ClCompile Include="Miestas\Renderer\Managers\TextureManager.cpp" />
     <ClCompile Include="Miestas\Renderer\OrthoCamera.cpp" />
     <ClCompile Include="Miestas\Renderer\Renderer.cpp" />
+    <ClCompile Include="Miestas\Renderer\Scene.cpp" />
     <ClCompile Include="Miestas\Renderer\Shader.cpp" />
     <ClCompile Include="Miestas\Renderer\stb_image\stb_image.cpp" />
     <ClCompile Include="Miestas\Renderer\TerrainGenerator.cpp" />

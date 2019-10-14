@@ -4,6 +4,7 @@
 #include<vector>
 #include<memory>
 
+#include "Scene.h"
 #include "Managers/TextureManager.h"
 #include "Managers/ShaderManager.h"
 #include "Renderer/OrthoCamera.h"
@@ -35,7 +36,7 @@ namespace Miestas
 			std::unique_ptr<ShaderManager> m_shaderManager;
 			std::unique_ptr<OrthoCamera> m_orthoCamera;
 
-			glm::mat4 m_viewProjectionMatrix;
+			std::unordered_map<GameState, std::unique_ptr<Scene>> m_sceneList;
 
 			GameState m_gameState = GameState::None;
 
@@ -49,14 +50,8 @@ namespace Miestas
 			void setWireframeMode(bool mode) const;
 
 			void init();
-
-			void beginScene();
-
-			void renderScene() const;
-
+			
 			void render() const;
-
-			void endScene();
 
 			virtual void onEvent(std::shared_ptr<Event> event) override;
 
@@ -66,9 +61,8 @@ namespace Miestas
 
 		private:
 
-			void renderMainMenuScene() const;
-
 			void handleGameStateChangeEvent(std::shared_ptr<GameStateChangeEvent> event);
+
 		};
 	}
 }
