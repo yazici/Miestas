@@ -150,8 +150,6 @@
     <ClInclude Include="Miestas\Core\InputHandler.h" />
     <ClInclude Include="Miestas\Core\KeyBindings.h" />
     <ClInclude Include="Miestas\Core\Memory\Allocator.h" />
-    <ClInclude Include="Miestas\Core\Memory\LinearAllocator.h" />
-    <ClInclude Include="Miestas\Core\Memory\PoolAllocator.h" />
     <ClInclude Include="Miestas\Core\Timer.h" />
     <ClInclude Include="Miestas\Core\Window.h" />
     <ClInclude Include="Miestas\freetype\config\ftconfig.h" />
@@ -784,7 +782,6 @@
     <ClCompile Include="Miestas\Core\Config.cpp" />
     <ClCompile Include="Miestas\Core\Event\EventQueue.cpp" />
     <ClCompile Include="Miestas\Core\InputHandler.cpp" />
-    <ClCompile Include="Miestas\Core\Memory\LinearAllocator.cpp" />
     <ClCompile Include="Miestas\Core\Timer.cpp" />
     <ClCompile Include="Miestas\Core\Window.cpp" />
     <ClCompile Include="Miestas\Game\City\CityManager.cpp" />
