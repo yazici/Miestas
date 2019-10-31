@@ -4,6 +4,9 @@
 #include "Core/Event/AudioEvents.h"
 #include "Core/Event/KeyboardEvents.h"
 
+#define REGISTER_OBSERVABLE(x,y) m_appEventQueue->registerObservable(EventType::##x, y##.get());
+#define REGISTER_OBSERVABLE_THIS(x) m_appEventQueue->registerObservable(EventType::##x, this);
+
 namespace Miestas
 {
 	using namespace Miestas::Renderer;
@@ -42,33 +45,41 @@ namespace Miestas
 		m_soundLibrary->addSongToLibrary("MainMenu", "../Miestas/Resources/Sounds/MainMenu.wav");
 		
 		// Register None Type Event
-		m_appEventQueue->registerObservable(EventType::None, m_Window.get());
-		m_appEventQueue->registerObservable(EventType::None, m_Renderer.get());
-		m_appEventQueue->registerObservable(EventType::None, m_gameManager.get());
-
+		REGISTER_OBSERVABLE(None, m_Window)
+		REGISTER_OBSERVABLE(None, m_Renderer)
+		REGISTER_OBSERVABLE(None, m_gameManager)
+		
 		// Register Key Pressed Events
-		m_appEventQueue->registerObservable(EventType::KeyPressedEvent, m_inputHandler.get());
-		m_appEventQueue->registerObservable(EventType::KeyReleasedEvent, m_inputHandler.get());
+		REGISTER_OBSERVABLE(KeyPressedEvent, m_inputHandler)
+		REGISTER_OBSERVABLE(KeyReleasedEvent, m_inputHandler)
+
 		
 		// Register Mouse Pressed Events
-		m_appEventQueue->registerObservable(EventType::MouseButtonPressedEvent, m_inputHandler.get());
-
+		REGISTER_OBSERVABLE(MouseButtonPressedEvent, m_inputHandler)
+		
 		// Register Game State Change Event
 		//m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_gameManager.get());
-		m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_inputHandler.get());
-		m_appEventQueue->registerObservable(EventType::GameStateChangeEvent, m_Renderer.get());
+
+		REGISTER_OBSERVABLE(GameStateChangeEvent, m_inputHandler)
+		REGISTER_OBSERVABLE(GameStateChangeEvent, m_Renderer)
+
 
 		// Register Window Resize Event
-		m_appEventQueue->registerObservable(EventType::WindowResizeEvent, this); // Don't think we really need to send events from Window to Application, but I'll keep it just in case 
+		REGISTER_OBSERVABLE_THIS(WindowResizeEvent)
+		//m_appEventQueue->registerObservable(EventType::WindowResizeEvent, this); // Don't think we really need to send events from Window to Application, but I'll keep it just in case 
 		
 		// Register Window Close Event
-		m_appEventQueue->registerObservable(EventType::WindowCloseEvent, this);
+		REGISTER_OBSERVABLE_THIS(WindowCloseEvent)
+		//m_appEventQueue->registerObservable(EventType::WindowCloseEvent, this);
 
 		// Register Sound Play Event
-		m_appEventQueue->registerObservable(EventType::PlaySoundEvent, m_soundLibrary.get());
+		REGISTER_OBSERVABLE(PlaySoundEvent, m_soundLibrary)
+
+		//m_appEventQueue->registerObservable(EventType::PlaySoundEvent, m_soundLibrary.get());
 
 		// Register Sound Stop Event
-		m_appEventQueue->registerObservable(EventType::StopSoundEvent, m_soundLibrary.get());
+		REGISTER_OBSERVABLE(StopSoundEvent, m_soundLibrary)
+		//m_appEventQueue->registerObservable(EventType::StopSoundEvent, m_soundLibrary.get());
 		
 		m_gameManager->setGameState(GameState::MainMenu);
 		//emitEvent(std::move(std::make_shared<PlaySoundEvent>("MainMenu", true)));

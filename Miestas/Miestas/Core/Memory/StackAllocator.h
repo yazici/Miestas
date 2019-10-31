@@ -1,6 +1,7 @@
 #ifndef STACK_ALLOCATOR_H
 #define STACK_ALLOCATOR_H
 
+#include<cstddef>
 
 namespace Miestas
 {
