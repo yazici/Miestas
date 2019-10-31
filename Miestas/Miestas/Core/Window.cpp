@@ -157,7 +157,9 @@ namespace Miestas
 
 			GLFWcursor* cursor = glfwCreateCursor(&cursorImage, 0, 0);
 
-			glfwSetCursor(m_Window, cursor);
+			m_cursorMap.insert({ "MainMenu", cursor });
+
+			glfwSetCursor(m_Window, m_cursorMap["MainMenu"]);
 
 			MIESTAS_LOG_INFO("Window: Successfully created and initialized window.")
 

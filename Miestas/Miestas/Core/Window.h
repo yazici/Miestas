@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include<string>
+#include<unordered_map>
 
 #include "GLFW/glfw3.h"
 
@@ -23,6 +24,8 @@ namespace Miestas
 
 			GLFWwindow* m_Window;
 			EventQueue* m_eventQueue;
+
+			std::unordered_map<std::string, GLFWcursor*> m_cursorMap;
 
 		public:
 
